@@ -428,3 +428,12 @@ header.header-dark.scrolled .nav-link {
 header.header-dark.scrolled .nav-link.active {
   color: var(--clinic-yellow) !important;
 }
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
