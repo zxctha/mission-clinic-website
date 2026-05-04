@@ -62,24 +62,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// Contact Form Submission (Email)
-const contactForm = document.getElementById('contactForm');
-
-if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-
-        const name = contactForm.querySelector('input[type="text"]').value;
-        const email = contactForm.querySelector('input[type="email"]').value;
-        const message = contactForm.querySelector('textarea').value;
-
-        const subject = `Inquiry from ${name}`;
-        const body = `Name: ${name}%0AEmail: ${email}%0A%0A${message}`;
-
-        window.location.href = `mailto:tubillo.marlon@gmail.com?subject=${subject}&body=${body}`;
-    });
-}
-
 // Contact Form Submission (AUTO EMAIL)
 const contactForm = document.getElementById('contactForm');
 
