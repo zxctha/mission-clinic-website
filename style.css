@@ -468,4 +468,33 @@ header.scrolled .logo-text h1 {
 header.scrolled .logo-text span {
   color: var(--slate-500);
 }
+/* DEFAULT (LIGHT BACKGROUND - homepage) */
+header .nav-link {
+  color: var(--slate-600);
+}
 
+header .nav-link.active {
+  color: var(--clinic-blue);
+}
+
+/* SCROLLED */
+header.scrolled .nav-link {
+  color: var(--slate-700);
+}
+
+/* FIX FOR BLUE HERO PAGES (services, contact, etc.) */
+.bg-blue + header .nav-link,
+.bg-blue ~ header .nav-link {
+  color: white;
+}
+
+/* SAFER VERSION */
+header:not(.scrolled) .nav-link {
+  color: var(--slate-600);
+}
+
+/* FORCE WHITE ONLY WHEN HEADER IS OVER BLUE */
+.hero.bg-blue ~ header,
+.bg-blue header {
+  color: white;
+}
