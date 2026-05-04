@@ -430,10 +430,10 @@ header.header-dark.scrolled .nav-link.active {
 }
 
 header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-  transition: all 0.3s ease;
+    position: sticky;
+    top: 0;
+}
+
+main {
+    margin-top: 90px; /* adjust based on header height */
 }
