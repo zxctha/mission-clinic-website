@@ -402,105 +402,13 @@ footer { background: var(--slate-900); color: var(--slate-400); padding: 4rem 0 
 
 .animate { animation: fadeInUp 0.6s ease forwards; }
 
-/* FIX HEADER TEXT VISIBILITY ON BLUE BACKGROUND */
-.bg-blue .nav-link {
-  color: white !important;
-}
-
-.bg-blue .nav-link.active {
-  color: var(--clinic-yellow) !important;
-}
-
-.bg-blue .logo-text h1,
-.bg-blue .logo-text span {
-  color: white !important;
-}
-
-.bg-blue .btn-primary {
-  background: white;
-  color: var(--clinic-blue);
-}
-
-/* DEFAULT HEADER (LIGHT BACKGROUND) */
-header .nav-link {
-  color: var(--slate-600);
-}
-
-header .nav-link.active {
-  color: var(--clinic-blue);
-}
-
-header .logo-text h1 {
-  color: var(--clinic-blue);
-}
-
-header .logo-text span {
-  color: var(--slate-500);
-}
-
-/* SCROLLED STATE */
-header.scrolled .nav-link {
-  color: var(--slate-700);
-}
-
-/* BLUE SECTION ONLY */
-.bg-blue .nav-link {
-  color: white !important;
-}
-
-.bg-blue .nav-link.active {
-  color: var(--clinic-yellow) !important;
-}
-
-/* SCROLLED STATE */
-header.scrolled .nav-link {
-  color: var(--slate-700);
-}
-
-header.scrolled .nav-link.active {
-  color: var(--clinic-blue);
-}
-
-header.scrolled .logo-text h1 {
-  color: var(--clinic-blue);
-}
-
-header.scrolled .logo-text span {
-  color: var(--slate-500);
-}
-/* DEFAULT (LIGHT BACKGROUND - homepage) */
-header .nav-link {
-  color: var(--slate-600);
-}
-
-header .nav-link.active {
-  color: var(--clinic-blue);
-}
-
-/* SCROLLED */
-header.scrolled .nav-link {
-  color: var(--slate-700);
-}
-
-/* FIX FOR BLUE HERO PAGES (services, contact, etc.) */
-.bg-blue + header .nav-link,
-.bg-blue ~ header .nav-link {
-  color: white;
-}
-
-/* SAFER VERSION */
-header:not(.scrolled) .nav-link {
-  color: var(--slate-600);
-}
-
-/* FORCE WHITE ONLY WHEN HEADER IS OVER BLUE */
-.hero.bg-blue ~ header,
-.bg-blue header {
-  color: white;
-}
-
+/* ===== DARK HEADER (SERVICES / CONTACT) ===== */
 .header-dark .nav-link {
   color: white;
+}
+
+.header-dark .nav-link.active {
+  color: var(--clinic-yellow);
 }
 
 .header-dark .logo-text h1,
@@ -508,6 +416,15 @@ header:not(.scrolled) .nav-link {
   color: white;
 }
 
-.header-light .nav-link {
-  color: var(--slate-600);
+/* KEEP WHITE EVEN WHEN SCROLLED */
+header.header-dark.scrolled {
+  background: var(--clinic-blue);
+}
+
+header.header-dark.scrolled .nav-link {
+  color: white;
+}
+
+header.header-dark.scrolled .nav-link.active {
+  color: var(--clinic-yellow);
 }
