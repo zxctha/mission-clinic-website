@@ -431,10 +431,13 @@ header.header-dark.scrolled .nav-link.active {
 
 header {
     position: fixed;
-    top: 0;
     height: 80px;
 }
 
 main {
     margin-top: 80px;
+}
+
+.hero-offset {
+    padding-top: 140px;
 }
