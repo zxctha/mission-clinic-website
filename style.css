@@ -421,18 +421,35 @@ footer { background: var(--slate-900); color: var(--slate-400); padding: 4rem 0 
   color: var(--clinic-blue);
 }
 
-/* HEADER TEXT FIX - TOP STATE */
-header:not(.scrolled) .nav-link {
+/* DEFAULT HEADER (LIGHT BACKGROUND) */
+header .nav-link {
+  color: var(--slate-600);
+}
+
+header .nav-link.active {
+  color: var(--clinic-blue);
+}
+
+header .logo-text h1 {
+  color: var(--clinic-blue);
+}
+
+header .logo-text span {
+  color: var(--slate-500);
+}
+
+/* SCROLLED STATE */
+header.scrolled .nav-link {
+  color: var(--slate-700);
+}
+
+/* BLUE SECTION ONLY */
+.bg-blue .nav-link {
   color: white !important;
 }
 
-header:not(.scrolled) .nav-link.active {
+.bg-blue .nav-link.active {
   color: var(--clinic-yellow) !important;
-}
-
-header:not(.scrolled) .logo-text h1,
-header:not(.scrolled) .logo-text span {
-  color: white !important;
 }
 
 /* SCROLLED STATE */
