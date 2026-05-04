@@ -401,3 +401,22 @@ footer { background: var(--slate-900); color: var(--slate-400); padding: 4rem 0 
 }
 
 .animate { animation: fadeInUp 0.6s ease forwards; }
+
+/* FIX HEADER TEXT VISIBILITY ON BLUE BACKGROUND */
+.bg-blue .nav-link {
+  color: white !important;
+}
+
+.bg-blue .nav-link.active {
+  color: var(--clinic-yellow) !important;
+}
+
+.bg-blue .logo-text h1,
+.bg-blue .logo-text span {
+  color: white !important;
+}
+
+.bg-blue .btn-primary {
+  background: white;
+  color: var(--clinic-blue);
+}
