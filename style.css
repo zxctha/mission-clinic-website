@@ -430,10 +430,11 @@ header.header-dark.scrolled .nav-link.active {
 }
 
 header {
-    position: sticky;
+    position: fixed;
     top: 0;
+    height: 80px;
 }
 
 main {
-    margin-top: 90px; /* adjust based on header height */
+    margin-top: 80px;
 }
