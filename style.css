@@ -403,17 +403,17 @@ footer { background: var(--slate-900); color: var(--slate-400); padding: 4rem 0 
 .animate { animation: fadeInUp 0.6s ease forwards; }
 
 /* ===== DARK HEADER (SERVICES / CONTACT) ===== */
-.header-dark .nav-link {
-  color: white;
+header.header-dark .nav-link {
+  color: white !important;
 }
 
-.header-dark .nav-link.active {
-  color: var(--clinic-yellow);
+header.header-dark .nav-link.active {
+  color: var(--clinic-yellow) !important;
 }
 
-.header-dark .logo-text h1,
-.header-dark .logo-text span {
-  color: white;
+header.header-dark .logo-text h1,
+header.header-dark .logo-text span {
+  color: white !important;
 }
 
 /* KEEP WHITE EVEN WHEN SCROLLED */
@@ -422,9 +422,9 @@ header.header-dark.scrolled {
 }
 
 header.header-dark.scrolled .nav-link {
-  color: white;
+  color: white !important;
 }
 
 header.header-dark.scrolled .nav-link.active {
-  color: var(--clinic-yellow);
+  color: var(--clinic-yellow) !important;
 }
