@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services | Mission Laboratory Medical Clinic</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <header class="scrolled">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-box">M</div>
+                <div class="logo-text">
+                    <h1>MISSION LAB</h1>
+                    <span>Medical Clinic</span>
+                </div>
+            </a>
+            <nav class="desktop-nav">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="services.html" class="nav-link active">Services</a>
+                <a href="about.html" class="nav-link">About Us</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+            <div class="nav-actions">
+                <a href="booking.html" class="btn btn-primary">Book Now</a>
+                <button class="mobile-toggle"><i data-lucide="menu"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <div class="mobile-menu">
+        <button class="menu-close" style="position: absolute; top: 1.5rem; right: 1.5rem;"><i data-lucide="x"></i></button>
+        <nav class="mobile-nav">
+            <a href="index.html">Home</a>
+            <a href="services.html">Services</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a>
+            <a href="booking.html" class="btn btn-primary">Book Appointment</a>
+        </nav>
+    </div>
+
+    <main>
+        <section class="section-padding bg-blue" style="padding-top: 10rem;">
+            <div class="container" style="text-align: center;">
+                <h1 style="font-size: 4rem; color: white; margin-bottom: 1.5rem;">Our Medical Services</h1>
+                <p style="color: rgba(255,255,255,0.8); font-size: 1.25rem; max-width: 700px; margin: 0 auto;">Comprehensive diagnostics and professional consultations to keep you healthy and ready for work.</p>
+            </div>
+        </section>
+
+        <section class="section-padding">
+            <div class="container">
+                <div class="grid-3" style="gap: 4rem 2rem;">
+                    <div class="service-card">
+                        <div class="service-icon"><i data-lucide="activity"></i></div>
+                        <h3>Physical Exam</h3>
+                        <p>Complete assessment for annual or school requirements.</p>
+                        <div style="background: var(--slate-50); padding: 1rem; border-radius: 1rem; font-size: 0.875rem;">
+                            <strong>Benefits:</strong> Same-day results, doctor review.
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon"><i data-lucide="briefcase"></i></div>
+                        <h3>Pre-Employment</h3>
+                        <p>DOH accredited packages for local and overseas deployment.</p>
+                        <div style="background: var(--slate-50); padding: 1rem; border-radius: 1rem; font-size: 0.875rem;">
+                            <strong>Benefits:</strong> Fast-track processing, complete tests.
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon"><i data-lucide="maximize"></i></div>
+                        <h3>Ultrasound</h3>
+                        <p>High-resolution imaging for abdominal and OB-GYN needs.</p>
+                        <div style="background: var(--slate-50); padding: 1rem; border-radius: 1rem; font-size: 0.875rem;">
+                            <strong>Benefits:</strong> Certified sonologists, modern equipment.
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon"><i data-lucide="heart-pulse"></i></div>
+                        <h3>2D Echo & ECG</h3>
+                        <p>In-depth cardiac screening and heart rhythm monitoring.</p>
+                        <div style="background: var(--slate-50); padding: 1rem; border-radius: 1rem; font-size: 0.875rem;">
+                            <strong>Benefits:</strong> Non-invasive, immediate findings.
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon"><i data-lucide="truck"></i></div>
+                        <h3>Home Service</h3>
+                        <p>Blood collection and lab tests at your doorstep.</p>
+                        <div style="background: var(--slate-50); padding: 1rem; border-radius: 1rem; font-size: 0.875rem;">
+                            <strong>Benefits:</strong> Convenient for seniors/busy schedules.
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon"><i data-lucide="shield-check"></i></div>
+                        <h3>Drug Testing</h3>
+                        <p>LTO, PNP, and employment drug screen results.</p>
+                        <div style="background: var(--slate-50); padding: 1rem; border-radius: 1rem; font-size: 0.875rem;">
+                            <strong>Benefits:</strong> Accredited, secure handling.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-padding bg-slate">
+            <div class="container" style="text-align: center;">
+                <h2 style="margin-bottom: 2rem;">Need a specific package?</h2>
+                <p style="margin-bottom: 3rem; color: var(--slate-600);">We customize health packages for corporate missions and bulk screenings.</p>
+                <div style="display: flex; justify-content: center; gap: 1rem;">
+                    <a href="booking.html" class="btn btn-primary">Book Individual Test</a>
+                    <a href="contact.html" class="btn btn-outline">Corporate Inquiry</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer style="margin-top: 4rem;">
+        <div class="container footer-bottom">
+            <p>&copy; 2026 Mission Laboratory Medical Clinic. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
