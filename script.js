@@ -79,3 +79,35 @@ if (contactForm) {
         window.location.href = `mailto:tubillo.marlon@gmail.com?subject=${subject}&body=${body}`;
     });
 }
+
+// Contact Form Submission (AUTO EMAIL)
+const contactForm = document.getElementById('contactForm');
+
+if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const btn = contactForm.querySelector('button');
+        btn.innerHTML = "Sending...";
+        btn.disabled = true;
+
+        const data = {
+            name: contactForm.querySelector('input[type="text"]').value,
+            email: contactForm.querySelector('input[type="email"]').value,
+            message: contactForm.querySelector('textarea').value
+        };
+
+        emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", data)
+            .then(function(response) {
+                btn.innerHTML = "Sent!";
+                contactForm.reset();
+
+                alert("Message sent successfully!");
+            }, function(error) {
+                btn.innerHTML = "Send Message";
+                btn.disabled = false;
+
+                alert("Failed to send message. Try again.");
+            });
+    });
+}
