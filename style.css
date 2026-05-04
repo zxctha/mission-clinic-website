@@ -420,3 +420,34 @@ footer { background: var(--slate-900); color: var(--slate-400); padding: 4rem 0 
   background: white;
   color: var(--clinic-blue);
 }
+
+/* HEADER TEXT FIX - TOP STATE */
+header:not(.scrolled) .nav-link {
+  color: white !important;
+}
+
+header:not(.scrolled) .nav-link.active {
+  color: var(--clinic-yellow) !important;
+}
+
+header:not(.scrolled) .logo-text h1,
+header:not(.scrolled) .logo-text span {
+  color: white !important;
+}
+
+/* SCROLLED STATE */
+header.scrolled .nav-link {
+  color: var(--slate-700);
+}
+
+header.scrolled .nav-link.active {
+  color: var(--clinic-blue);
+}
+
+header.scrolled .logo-text h1 {
+  color: var(--clinic-blue);
+}
+
+header.scrolled .logo-text span {
+  color: var(--slate-500);
+}
