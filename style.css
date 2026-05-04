@@ -51,7 +51,9 @@ ul {
 }
 
 .container {
-    height: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
 }
 
 /* Header */
@@ -73,15 +75,15 @@ header.scrolled {
 }
 
 .nav-container {
-    display: grid;
-    grid-template-columns: auto 1fr auto;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    gap: 2rem;
 }
 
-.logo img {
-    height: 40px;
-    width: auto;
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
 }
 
 .logo-box {
@@ -113,7 +115,6 @@ header.scrolled {
 
 .desktop-nav {
     display: flex;
-    justify-content: center;
     gap: 2rem;
 }
 
@@ -130,8 +131,7 @@ header.scrolled {
 .nav-actions {
     display: flex;
     align-items: center;
-    gap: 1rem;
-    justify-content: flex-end;
+    gap: 1.5rem;
 }
 
 .phone-link {
@@ -430,7 +430,10 @@ header.header-dark.scrolled .nav-link.active {
 }
 
 header {
-    height: 70px;
-    display: flex;
-    align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: all 0.3s ease;
 }
