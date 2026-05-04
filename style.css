@@ -498,3 +498,16 @@ header:not(.scrolled) .nav-link {
 .bg-blue header {
   color: white;
 }
+
+.header-dark .nav-link {
+  color: white;
+}
+
+.header-dark .logo-text h1,
+.header-dark .logo-text span {
+  color: white;
+}
+
+.header-light .nav-link {
+  color: var(--slate-600);
+}
