@@ -375,3 +375,13 @@ header.header-dark .nav-link.active {
     transform: translateY(-2px);
     box-shadow: 0 10px 20px rgba(0,0,0,0.15);
 }
+/* FORCE FIX BUTTON SIZE */
+.form-side button {
+    width: auto !important;
+    max-width: 300px;
+    display: inline-block !important;
+    height: auto !important;
+    padding: 0.9rem 2rem !important;
+    font-size: 1rem;
+    border-radius: 999px;
+}
