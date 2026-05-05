@@ -256,3 +256,34 @@ header.header-dark .nav-link.active {
         display: none;
     }
 }
+/* MOBILE MENU FIX */
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    height: 100vh;
+    background: white;
+    z-index: 1001;
+    transition: right 0.3s ease;
+    padding: 4rem 2rem;
+}
+
+.mobile-menu.active {
+    right: 0;
+}
+
+.mobile-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+/* HIDE MOBILE MENU SA DESKTOP */
+@media (min-width: 1025px) {
+    .mobile-menu {
+        display: none;
+    }
+}
