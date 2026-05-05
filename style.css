@@ -416,3 +416,28 @@ header.header-dark .nav-link.active {
 .form-control:hover {
     border-color: var(--clinic-blue);
 }
+
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--slate-600);
+    display: block;
+    margin-bottom: 0.4rem;
+}
+
+.form-side button {
+    width: auto !important;
+    max-width: 300px;
+}
+
+.form-side button {
+    width: auto;
+    max-width: 300px;
+    display: inline-flex;
+    justify-content: center;
+}
