@@ -4,90 +4,164 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book Appointment | Mission Lab CDO</title>
+
     <link rel="stylesheet" href="style.css">
+
+    <!-- LUCIDE ICONS -->
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 
-    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-
-<script>
-(function(){
-  emailjs.init("212mOCOcr3tgYjskP"); // 🔥 palitan mo ito
-})();
-</script>
-
-    
 <body class="bg-slate">
+
+    <!-- HEADER -->
     <header>
         <div class="container nav-container">
             <a href="index.html" class="logo">
-            <img src="logo.png" style="height:50px; margin-right:10px;">
-            <div class="logo-text">
-                <h1>MISSION LAB</h1>
-                <span>Medical Clinic</span>
-            </div>
-        </a>
+                <img src="logo.png" style="height:50px; margin-right:10px;">
+                <div class="logo-text">
+                    <h1>MISSION LAB</h1>
+                    <span>Medical Clinic</span>
+                </div>
+            </a>
+
             <div class="nav-actions">
                 <a href="index.html" class="btn btn-outline">Back to Home</a>
             </div>
         </div>
     </header>
 
+    <!-- MAIN -->
     <main class="section-padding" style="padding-top: 8rem;">
         <div class="container">
             <div class="booking-box">
+
+                <!-- LEFT SIDE -->
                 <div class="booking-info">
                     <h2 style="font-size: 2.5rem; margin-bottom: 2rem;">Book Your Appointment</h2>
-                    <p style="opacity: 0.8; margin-bottom: 3.5rem;">Skip the lines. Schedule your tests in less than a minute. Our staff will call you to confirm.</p>
-                    
+                    <p style="opacity: 0.8; margin-bottom: 3.5rem;">
+                        Skip the lines. Schedule your tests in less than a minute.
+                        Our staff will call you to confirm.
+                    </p>
+
                     <ul style="display: flex; flex-direction: column; gap: 2rem;">
                         <li style="display: flex; gap: 1rem;">
                             <i data-lucide="check-circle-2" style="color: var(--clinic-yellow);"></i>
-                            <div><strong>Fast Confirmation</strong><p style="font-size: 0.875rem; opacity: 0.6;">Callback within 30 minutes.</p></div>
+                            <div>
+                                <strong>Fast Confirmation</strong>
+                                <p style="font-size: 0.875rem; opacity: 0.6;">Callback within 30 minutes.</p>
+                            </div>
                         </li>
+
                         <li style="display: flex; gap: 1rem;">
                             <i data-lucide="check-circle-2" style="color: var(--clinic-yellow);"></i>
-                            <div><strong>Daily Slots</strong><p style="font-size: 0.875rem; opacity: 0.6;">Open Mon-Sun for your convenience.</p></div>
+                            <div>
+                                <strong>Daily Slots</strong>
+                                <p style="font-size: 0.875rem; opacity: 0.6;">Open Mon-Sun for your convenience.</p>
+                            </div>
                         </li>
                     </ul>
                 </div>
-                
+
+                <!-- FORM SIDE -->
                 <div class="form-side">
                     <form id="bookingForm">
+
                         <div class="form-group">
                             <label>Full Name</label>
-                            <input type="text" class="form-control" placeholder="Juan Dela Cruz" required>
+                            <input type="text" name="name" class="form-control" placeholder="Juan Dela Cruz" required>
                         </div>
+
                         <div class="form-group">
                             <label>Mobile Number</label>
-                            <input type="tel" class="form-control" placeholder="0912 345 6789" required>
+                            <input type="tel" name="phone" class="form-control" placeholder="0912 345 6789" required>
                         </div>
+
                         <div class="grid-2" style="gap: 1.5rem; margin-bottom: 1.5rem;">
                             <div class="form-group" style="margin: 0;">
                                 <label>Service Needed</label>
-                                <select class="form-control">
+                                <select name="service" class="form-control">
                                     <option>Annual Physical Exam</option>
-                                    <option>Pre-Employment package</option>
+                                    <option>Pre-Employment Package</option>
                                     <option>Ultrasound / 2D Echo</option>
                                     <option>Laboratory Tests</option>
                                     <option>Home Service</option>
                                 </select>
                             </div>
+
                             <div class="form-group" style="margin: 0;">
                                 <label>Preferred Date</label>
-                                <input type="date" class="form-control" required>
+                                <input type="date" name="date" class="form-control" required>
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-primary" style="width: 100%; height: 3.5rem; font-size: 1.125rem;">Confirm Appointment Request</button>
+
+                        <button type="submit" class="btn btn-primary" style="width: 100%; height: 3.5rem;">
+                            Confirm Appointment Request
+                        </button>
+
                         <p style="text-align: center; font-size: 0.75rem; color: var(--slate-500); margin-top: 1.5rem;">
-                            We will contact you shortly to confirm the availability of your chosen slot.
+                            We will contact you shortly to confirm your slot.
                         </p>
+
                     </form>
                 </div>
+
             </div>
         </div>
     </main>
 
+    <!-- EMAILJS -->
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+    <script>
+        (function(){
+            emailjs.init("212mOCOcr3tgYjskP");
+        })();
+    </script>
+
+    <!-- BOOKING EMAIL SEND -->
+    <script>
+    document.getElementById("bookingForm").addEventListener("submit", function(e){
+        e.preventDefault();
+
+        emailjs.sendForm(
+            "service_zs1jkqj",   // SERVICE ID
+            "template_booking", // TEMPLATE ID
+            this
+        ).then(() => {
+
+            document.querySelector(".form-side").innerHTML = `
+                <div style="text-align:center; padding:2rem;">
+                    <div style="width:80px;height:80px;background:#dcfce7;color:#16a34a;border-radius:50%;
+                    display:flex;align-items:center;justify-content:center;margin:0 auto 2rem;">
+                        <i data-lucide="check-circle-2" size="48"></i>
+                    </div>
+
+                    <h2>Appointment Sent!</h2>
+                    <p>We will contact you shortly.</p>
+                    <a href="index.html" class="btn btn-primary">Back to Home</a>
+                </div>
+            `;
+
+            lucide.createIcons();
+
+        }, (error) => {
+            alert("Failed to send. Try again.");
+            console.error(error);
+        });
+    });
+    </script>
+
+    <!-- LUCIDE INIT -->
+    <script>
+    window.addEventListener("load", () => {
+        if (window.lucide) {
+            lucide.createIcons();
+        }
+    });
+    </script>
+
+    <!-- MAIN SCRIPT -->
     <script src="script.js"></script>
+
 </body>
 </html>
