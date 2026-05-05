@@ -256,7 +256,7 @@ header.header-dark .nav-link.active {
         display: none;
     }
 }
-/* MOBILE MENU FIX */
+/* MOBILE MENU FINAL FIX */
 .mobile-menu {
     position: fixed;
     top: 0;
@@ -265,12 +265,16 @@ header.header-dark .nav-link.active {
     height: 100vh;
     background: white;
     z-index: 1001;
-    transition: right 0.3s ease;
+    transition: all 0.3s ease;
     padding: 4rem 2rem;
+    opacity: 0;
+    visibility: hidden;
 }
 
 .mobile-menu.active {
     right: 0;
+    opacity: 1;
+    visibility: visible;
 }
 
 .mobile-nav {
@@ -281,9 +285,9 @@ header.header-dark .nav-link.active {
     font-weight: 700;
 }
 
-/* HIDE MOBILE MENU SA DESKTOP */
+/* HIDE SA DESKTOP */
 @media (min-width: 1025px) {
     .mobile-menu {
-        display: none;
+        display: none !important;
     }
 }
