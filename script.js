@@ -48,7 +48,7 @@ if (bookingForm) {
         };
 
         // 🔥 SEND EMAIL
-        emailjs.send("service_zs1jkqj", "YOUR_TEMPLATE_ID", data)
+        emailjs.send("service_zs1jkqj", "service_zs1jkqj", data)
         .then(() => {
             const container = document.querySelector('.form-side');
             container.innerHTML = `
