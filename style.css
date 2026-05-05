@@ -410,3 +410,16 @@ header.header-dark .nav-link.active {
     box-shadow: 0 0 0 4px rgba(0,74,173,0.1);
     outline: none;
 }
+
+.booking-info h2 {
+    font-family: var(--font-display);
+    font-weight: 700;
+}
+
+.booking-info p {
+    font-size: 0.95rem;
+}
+
+.form-control:hover {
+    border-color: var(--clinic-blue);
+}
