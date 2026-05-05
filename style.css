@@ -1,9 +1,7 @@
-/* MISSION LABORATORY MEDICAL CLINIC - FINAL CSS */
+/* MISSION LABORATORY MEDICAL CLINIC - COMPLETE CSS */
 
-/* GOOGLE FONTS */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
-/* ROOT COLORS */
 :root {
     --clinic-blue: #004aad;
     --clinic-blue-light: #e0f2fe;
@@ -23,41 +21,16 @@
     --font-display: 'Poppins', sans-serif;
 }
 
-/* GLOBAL */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
 body {
     padding-top: 80px;
     font-family: var(--font-sans);
     color: var(--slate-900);
-    background: white;
-    overflow-x: hidden;
-}
-
-/* TYPOGRAPHY */
-h1,h2,h3,h4,h5,h6 {
-    font-family: var(--font-display);
-    font-weight: 700;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-/* LAYOUT */
-.container {
-    max-width: 1200px;
-    margin: auto;
-    padding: 0 1.5rem;
 }
 
 /* HEADER */
@@ -65,15 +38,13 @@ header {
     position: fixed;
     top: 0;
     width: 100%;
+    background: white;
     z-index: 1000;
     padding: 1rem 0;
-    background: white;
-    transition: all 0.3s ease;
-    backdrop-filter: blur(10px);
+    transition: 0.3s;
 }
 
 header.scrolled {
-    padding: 0.75rem 0;
     box-shadow: 0 6px 20px rgba(0,0,0,0.08);
 }
 
@@ -93,6 +64,12 @@ header.header-dark .nav-link.active {
 }
 
 /* NAV */
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 1.5rem;
+}
+
 .nav-container {
     display: flex;
     justify-content: space-between;
@@ -105,12 +82,12 @@ header.header-dark .nav-link.active {
 }
 
 .nav-link {
-    font-size: 0.875rem;
+    font-size: 0.9rem;
     color: var(--slate-600);
 }
 
-.nav-link.active,
-.nav-link:hover {
+.nav-link:hover,
+.nav-link.active {
     color: var(--clinic-blue);
 }
 
@@ -128,7 +105,6 @@ header.header-dark .nav-link.active {
 
 .logo-text span {
     font-size: 0.65rem;
-    color: var(--slate-500);
 }
 
 /* BUTTONS */
@@ -140,10 +116,6 @@ header.header-dark .nav-link.active {
     display: inline-flex;
     gap: 0.5rem;
     transition: 0.2s;
-}
-
-.btn:hover {
-    transform: translateY(-2px);
 }
 
 .btn-primary {
@@ -162,15 +134,28 @@ header.header-dark .nav-link.active {
 
 /* HERO */
 .hero {
-    padding: 6rem 0 4rem;
-    display: flex;
-    align-items: center;
+    padding: 10rem 0 6rem;
 }
 
 .hero-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 3rem;
+    gap: 4rem;
+}
+
+.hero-content h2 {
+    font-size: 3.5rem;
+    line-height: 1.2;
+}
+
+.hero-content p {
+    margin-top: 1rem;
+    color: var(--slate-600);
+}
+
+/* IMAGE */
+.hero-image {
+    position: relative;
 }
 
 .hero-image img {
@@ -178,9 +163,54 @@ header.header-dark .nav-link.active {
     border-radius: 2rem;
 }
 
+/* FLOATING CARDS */
+.floating-card {
+    position: absolute;
+    background: white;
+    padding: 1.5rem;
+    border-radius: 1.25rem;
+    box-shadow: 0 20px 25px rgba(0,0,0,0.1);
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.card-top {
+    top: -2rem;
+    right: -1rem;
+}
+
+.card-bottom {
+    bottom: -2rem;
+    left: -1rem;
+    background: var(--clinic-yellow);
+}
+
+/* ICON */
+.icon-box {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* GRID */
+.grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 2rem;
+}
+
 /* CARDS */
-.service-card,
-.testimonial-card {
+.service-card {
     background: white;
     padding: 2rem;
     border-radius: 1.5rem;
@@ -188,33 +218,8 @@ header.header-dark .nav-link.active {
     box-shadow: 0 10px 25px rgba(0,0,0,0.05);
 }
 
-.service-card:hover,
-.testimonial-card:hover {
+.service-card:hover {
     transform: translateY(-5px);
-}
-
-/* ICONS */
-.service-icon {
-    width: 4rem;
-    height: 4rem;
-    background: var(--clinic-blue-light);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 1rem;
-}
-
-/* GRID */
-.grid-3 {
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    gap: 2rem;
-}
-
-.grid-2 {
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
-    gap: 2rem;
 }
 
 /* SECTIONS */
@@ -227,17 +232,11 @@ header.header-dark .nav-link.active {
     color: white;
 }
 
-.bg-blue h1,
-.bg-blue h2,
-.bg-blue p {
-    color: white;
-}
-
 .bg-slate {
     background: var(--slate-50);
 }
 
-/* FORMS */
+/* FORM */
 .form-control {
     width: 100%;
     padding: 1rem;
@@ -245,42 +244,15 @@ header.header-dark .nav-link.active {
     border: 1px solid var(--slate-200);
 }
 
-/* FOOTER */
-footer {
-    background: var(--slate-900);
-    color: var(--slate-400);
-    padding: 3rem 0;
-}
-
 /* MOBILE */
 @media (max-width: 1024px) {
     .hero-grid,
-    .grid-3,
-    .grid-2 {
+    .grid-2,
+    .grid-3 {
         grid-template-columns: 1fr;
     }
 
     .desktop-nav {
         display: none;
     }
-
-    .mobile-toggle {
-        display: block;
-    }
-}
-
-/* MOBILE MENU */
-.mobile-menu {
-    position: fixed;
-    right: -100%;
-    top: 0;
-    width: 80%;
-    height: 100vh;
-    background: white;
-    transition: 0.3s;
-    z-index: 1001;
-}
-
-.mobile-menu.active {
-    right: 0;
 }
