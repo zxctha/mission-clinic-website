@@ -1,119 +1,439 @@
-// MISSION LABORATORY MEDICAL CLINIC - FINAL JS
+/* MISSION LABORATORY MEDICAL CLINIC - STATIC CSS */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
-document.addEventListener('DOMContentLoaded', () => {
+:root {
+    --clinic-blue: #004aad;
+    --clinic-blue-light: #e0f2fe;
+    --clinic-blue-dark: #003a8a;
+    --clinic-yellow: #ffde59;
+    --clinic-yellow-dark: #facc15;
+    --slate-50: #f8fafc;
+    --slate-100: #f1f5f9;
+    --slate-200: #e2e8f0;
+    --slate-400: #94a3b8;
+    --slate-500: #64748b;
+    --slate-600: #475569;
+    --slate-700: #334155;
+    --slate-900: #0f172a;
+    --white: #ffffff;
+    --font-sans: 'Inter', sans-serif;
+    --font-display: 'Poppins', sans-serif;
+}
 
-    // =========================
-    // HEADER SCROLL EFFECT
-    // =========================
-    const header = document.querySelector('header');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+}
 
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            header.classList.add('scrolled');
-        } else {
-            header.classList.remove('scrolled');
-        }
-    });
+body {
+    padding-top: 80px;
+    font-family: var(--font-sans);
+    color: var(--slate-900);
+    background-color: var(--white);
+    line-height: 1.5;
+    overflow-x: hidden;
+}
 
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    font-weight: 700;
+}
 
-    // =========================
-    // MOBILE MENU
-    // =========================
-    const mobileToggle = document.querySelector('.mobile-toggle');
-    const mobileMenu = document.querySelector('.mobile-menu');
-    const menuClose = document.querySelector('.menu-close');
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+}
 
-    if (mobileToggle && mobileMenu) {
-        mobileToggle.addEventListener('click', () => {
-            mobileMenu.classList.add('active');
-        });
-    }
+ul {
+    list-style: none;
+}
 
-    if (menuClose && mobileMenu) {
-        menuClose.addEventListener('click', () => {
-            mobileMenu.classList.remove('active');
-        });
-    }
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
 
+/* Header FIXED CLEAN */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 1rem 0;
+    background: white; /* default */
+    transition: all 0.3s ease;
+}
 
-    // =========================
-    // BOOKING FORM (EMAILJS)
-    // =========================
-    const bookingForm = document.getElementById('bookingForm');
+header.scrolled {
+    background: white;
+    padding: 0.75rem 0;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
 
-    if (bookingForm) {
-        bookingForm.addEventListener('submit', function(e) {
-            e.preventDefault();
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
 
-            const btn = this.querySelector('button[type="submit"]');
-            btn.innerHTML = 'Sending...';
-            btn.disabled = true;
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
 
-            // ✅ GET VALUES (FIXED)
-            const data = {
-                name: this.querySelector('input[type="text"]').value,
-                phone: this.querySelector('input[type="tel"]').value,
-                service: this.querySelector('select').value,
-                date: this.querySelector('input[type="date"]').value
-            };
+.logo-box {
+    width: 2.5rem;
+    height: 2.5rem;
+    background: var(--clinic-blue);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 800;
+    font-size: 1.25rem;
+}
 
-            // ✅ EMAILJS SEND
-            emailjs.send("service_zs1jkqj", "template_contact", data)
-            .then(() => {
+.logo-text h1 {
+    font-size: 1.125rem;
+    color: var(--clinic-blue);
+    line-height: 1;
+}
 
-                const container = document.querySelector('.form-side');
+.logo-text span {
+    font-size: 0.625rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--slate-500);
+}
 
-                container.innerHTML = `
-                    <div style="text-align: center; padding: 2rem;">
-                        <h2>✅ Appointment Sent!</h2>
-                        <p>We will contact you shortly.</p>
-                        <a href="index.html" class="btn btn-primary">Back to Home</a>
-                    </div>
-                `;
+.desktop-nav {
+    display: flex;
+    gap: 2rem;
+}
 
-            })
-            .catch((error) => {
-                alert("❌ Failed to send. Check EmailJS setup.");
-                console.error(error);
+.nav-link {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--slate-600);
+}
 
-                btn.innerHTML = 'Confirm Appointment Request';
-                btn.disabled = false;
-            });
-        });
-    }
+.nav-link:hover, .nav-link.active {
+    color: var(--clinic-blue);
+}
 
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
 
-    // =========================
-    // CONTACT FORM (EMAILJS)
-    // =========================
-    const contactForm = document.getElementById("contactForm");
+.phone-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 700;
+    color: var(--clinic-blue);
+    font-size: 0.875rem;
+}
 
-    if (contactForm) {
-        contactForm.addEventListener("submit", function(e){
-            e.preventDefault();
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 1.75rem;
+    border-radius: 9999px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: transform 0.2s ease, background 0.3s ease;
+    gap: 0.5rem;
+}
 
-            emailjs.send("service_zs1jkqj", "template_contact", {
-                name: document.getElementById("name").value,
-                email: document.getElementById("email").value,
-                message: document.getElementById("message").value
-            })
-            .then(() => {
-                alert("✅ Message sent successfully!");
-                contactForm.reset();
-            })
-            .catch((error) => {
-                alert("❌ Failed to send message");
-                console.error(error);
-            });
-        });
-    }
+.btn:active {
+    transform: scale(0.95);
+}
 
+.btn-primary {
+    background: var(--clinic-blue);
+    color: white;
+}
 
-    // =========================
-    // LUCIDE ICONS FIX
-    // =========================
-    if (typeof lucide !== 'undefined') {
-        lucide.createIcons();
-    }
+.btn-primary:hover {
+    background: var(--clinic-blue-dark);
+}
 
-});
+.btn-yellow {
+    background: var(--clinic-yellow);
+    color: var(--slate-900);
+    box-shadow: 0 4px 14px rgba(255, 222, 89, 0.3);
+}
+
+.btn-yellow:hover {
+    background: var(--clinic-yellow-dark);
+}
+
+.btn-outline {
+    background: transparent;
+    border: 2px solid var(--clinic-blue);
+    color: var(--clinic-blue);
+}
+
+.btn-outline:hover {
+    background: var(--clinic-blue);
+    color: white;
+}
+
+.mobile-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--slate-600);
+    cursor: pointer;
+}
+
+/* Hero Section */
+.hero {
+    padding: 6rem 0 4rem;
+    background: radial-gradient(circle at 50% 50%, rgba(0, 74, 173, 0.05) 0%, rgba(255, 255, 255, 1) 100%);
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.trust-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: var(--clinic-blue-light);
+    color: var(--clinic-blue);
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+}
+
+.hero-content h2 {
+    font-size: 4rem;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+}
+
+.text-blue { color: var(--clinic-blue); }
+
+.hero-content p {
+    font-size: 1.25rem;
+    color: var(--slate-600);
+    margin-bottom: 2.5rem;
+    max-width: 500px;
+}
+
+.hero-btns {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.hero-image {
+    position: relative;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+    border-radius: 2rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
+}
+
+.floating-card {
+    position: absolute;
+    background: white;
+    padding: 1.5rem;
+    border-radius: 1.25rem;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    z-index: 10;
+}
+
+.card-top { top: -2rem; right: -1rem; }
+.card-bottom { bottom: -2rem; left: -1rem; background: var(--clinic-yellow); }
+
+.icon-box {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Sections */
+.section-padding { padding: 6rem 0; }
+.bg-slate { background: var(--slate-50); }
+
+.section-header {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 4rem;
+}
+
+.section-header h2 { font-size: 2.5rem; margin-top: 1rem; }
+.label { color: var(--clinic-blue); text-transform: uppercase; font-size: 0.875rem; font-weight: 700; letter-spacing: 0.1em; }
+
+/* Grid Layouts */
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+.grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+
+/* Service Card */
+.service-card {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 2rem;
+    border: 1px solid var(--slate-100);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+}
+
+.service-icon {
+    width: 4rem;
+    height: 4rem;
+    background: var(--clinic-blue-light);
+    color: var(--clinic-blue);
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Why Choose Us */
+.bg-blue { background: var(--clinic-blue); color: white; }
+.why-item { display: flex; gap: 1.5rem; margin-bottom: 2rem; }
+.why-num {
+    width: 3rem; height: 3rem; background: var(--clinic-yellow); color: var(--slate-900);
+    border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 900; shrink: 0;
+}
+
+/* Footer */
+footer { background: var(--slate-900); color: var(--slate-400); padding: 4rem 0 2rem; }
+.footer-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 3rem; margin-bottom: 4rem; }
+.footer-col h3 { color: white; margin-bottom: 1.5rem; }
+.footer-links li { margin-bottom: 0.75rem; }
+.footer-links a:hover { color: var(--clinic-yellow); }
+.footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2rem; display: flex; justify-content: space-between; font-size: 0.75rem; }
+
+/* Booking Form */
+.booking-box {
+    background: white;
+    border-radius: 2.5rem;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
+}
+
+.booking-info { background: var(--clinic-blue); color: white; padding: 4rem; }
+.form-side { padding: 4rem; }
+
+.form-group { margin-bottom: 1.5rem; }
+.form-group label { display: block; font-weight: 700; font-size: 0.875rem; margin-bottom: 0.5rem; color: var(--slate-700); }
+.form-control {
+    width: 100%; padding: 1rem 1.25rem; border-radius: 1rem; border: 1px solid var(--slate-200);
+    font-family: inherit; font-size: 1rem; transition: border 0.3s;
+}
+
+.form-control:focus { outline: none; border-color: var(--clinic-blue); box-shadow: 0 0 0 4px rgba(0,74,173,0.1); }
+
+/* Mobile Responsive */
+@media (max-width: 1024px) {
+    .hero-grid, .grid-3, .footer-grid, .booking-box { grid-template-columns: 1fr; }
+    .hero-content h2 { font-size: 3rem; }
+    .hero-image { display: none; }
+    .desktop-nav, .nav-actions .phone-link { display: none; }
+    .mobile-toggle { display: block; }
+}
+
+.mobile-menu {
+    position: fixed; top: 0; right: -100%; width: 80%; height: 100vh; background: white;
+    z-index: 1001; transition: right 0.3s ease; padding: 4rem 2rem; box-shadow: -10px 0 30px rgba(0,0,0,0.1);
+}
+
+.mobile-menu.active { right: 0; }
+.mobile-nav { display: flex; flex-direction: column; gap: 2rem; font-size: 1.5rem; font-weight: 700; }
+
+.floating-cta {
+    position: fixed; bottom: 2rem; right: 2rem; z-index: 99; display: flex; flex-direction: column; gap: 1rem;
+}
+
+.floating-btn {
+    width: 3.5rem; height: 3.5rem; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15); color: white;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.animate { animation: fadeInUp 0.6s ease forwards; }
+
+/* ===== DARK HEADER (SERVICES / CONTACT) ===== */
+header.header-dark .nav-link {
+  color: white !important;
+}
+
+header.header-dark .nav-link.active {
+  color: var(--clinic-yellow) !important;
+}
+
+header.header-dark .logo-text h1,
+header.header-dark .logo-text span {
+  color: white !important;
+}
+
+/* KEEP WHITE EVEN WHEN SCROLLED */
+header.header-dark.scrolled {
+  background: var(--clinic-blue);
+}
+
+header.header-dark.scrolled .nav-link {
+  color: white !important;
+}
+
+header.header-dark.scrolled .nav-link.active {
+  color: var(--clinic-yellow) !important;
+}
+
+/* FIX: DARK HEADER DEFAULT BACKGROUND */
+header.header-dark {
+    background: var(--clinic-blue);
+}
