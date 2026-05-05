@@ -338,3 +338,31 @@ header.header-dark .nav-link.active {
         display: none !important;
     }
 }
+
+/* BOOKING LAYOUT FIX */
+.booking-box {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    background: white;
+    border-radius: 2.5rem;
+    overflow: hidden;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.1);
+}
+
+/* LEFT SIDE */
+.booking-info {
+    background: var(--clinic-blue);
+    color: white;
+    padding: 3rem;
+}
+
+/* RIGHT SIDE */
+.form-side {
+    padding: 3rem;
+}
+
+@media (max-width: 768px) {
+    .booking-box {
+        grid-template-columns: 1fr;
+    }
+}
