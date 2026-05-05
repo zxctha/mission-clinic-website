@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
             };
 
             // ✅ SEND EMAIL
-            emailjs.send("service_zs1jkqj", "template_imko2br", data)
+            emailjs.send("service_zs1jkqj", "template_booking", data)
             .then(() => {
 
                 const container = document.querySelector('.form-side');
