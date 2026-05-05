@@ -1,4 +1,4 @@
-/* MISSION LABORATORY MEDICAL CLINIC - FINAL CSS */
+/* MISSION LABORATORY MEDICAL CLINIC - FINAL CLEAN CSS */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
@@ -21,12 +21,18 @@
     --font-display: 'Poppins', sans-serif;
 }
 
+/* RESET */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+a {
+    text-decoration: none;
+}
+
+/* BODY */
 body {
     padding-top: 80px;
     font-family: var(--font-sans);
@@ -74,6 +80,7 @@ header.header-dark .nav-link.active {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 2rem;
 }
 
 .desktop-nav {
@@ -105,6 +112,13 @@ header.header-dark .nav-link.active {
 
 .logo-text span {
     font-size: 0.65rem;
+}
+
+/* NAV ACTIONS */
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
 }
 
 /* BUTTONS */
@@ -234,12 +248,11 @@ header.header-dark .nav-link.active {
     border: 1px solid var(--slate-200);
 }
 
-/* FLOATING CTA (FIXED RIGHT) */
+/* FLOATING CTA */
 .floating-cta {
     position: fixed;
     bottom: 3rem;
     right: 2rem;
-    left: auto;
     z-index: 999;
     display: flex;
     flex-direction: column;
@@ -257,20 +270,7 @@ header.header-dark .nav-link.active {
     color: white;
 }
 
-/* MOBILE */
-@media (max-width: 1024px) {
-    .hero-grid,
-    .grid-2,
-    .grid-3 {
-        grid-template-columns: 1fr;
-    }
-
-    .desktop-nav {
-        display: none;
-    }
-}
-
-/* MOBILE MENU FINAL */
+/* MOBILE MENU */
 .mobile-menu {
     position: fixed;
     top: 0;
@@ -299,7 +299,40 @@ header.header-dark .nav-link.active {
     font-weight: 700;
 }
 
-/* HIDE SA DESKTOP */
+/* MOBILE TOGGLE (BURGER BUTTON) */
+.mobile-toggle {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 10px;
+    border: 1px solid var(--slate-200);
+    background: white;
+    cursor: pointer;
+}
+
+.mobile-toggle:hover {
+    background: var(--slate-100);
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+    .hero-grid,
+    .grid-2,
+    .grid-3 {
+        grid-template-columns: 1fr;
+    }
+
+    .desktop-nav {
+        display: none;
+    }
+
+    .mobile-toggle {
+        display: flex;
+    }
+}
+
 @media (min-width: 1025px) {
     .mobile-menu {
         display: none !important;
