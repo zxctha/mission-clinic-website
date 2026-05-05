@@ -28,7 +28,7 @@
 }
 
 body {
-    padding-top: 100px;
+    padding-top: 80px;
     font-family: var(--font-sans);
     color: var(--slate-900);
     background-color: var(--white);
@@ -57,20 +57,20 @@ ul {
     padding: 0 1.5rem;
 }
 
-/* Header */
+/* Header FIXED CLEAN */
 header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 1000;
+    padding: 1rem 0;
+    background: white; /* default */
     transition: all 0.3s ease;
-    padding: 1.5rem 0;
 }
 
 header.scrolled {
-    background: #ffffff; /* solid white */
-    backdrop-filter: blur(10px);
+    background: white;
     padding: 0.75rem 0;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
 }
@@ -204,7 +204,7 @@ header.scrolled {
 
 /* Hero Section */
 .hero {
-    padding: 10rem 0 6rem;
+    padding: 6rem 0 4rem;
     background: radial-gradient(circle at 50% 50%, rgba(0, 74, 173, 0.05) 0%, rgba(255, 255, 255, 1) 100%);
     min-height: 90vh;
     display: flex;
@@ -433,8 +433,7 @@ header.header-dark.scrolled .nav-link.active {
   color: var(--clinic-yellow) !important;
 }
 
-header.scrolled {
-    background: white;
-    padding: 0.75rem 0;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+/* FIX: DARK HEADER DEFAULT BACKGROUND */
+header.header-dark {
+    background: var(--clinic-blue);
 }
