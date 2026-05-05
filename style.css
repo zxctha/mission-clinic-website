@@ -243,9 +243,17 @@ header.header-dark .nav-link.active {
 /* FORM */
 .form-control {
     width: 100%;
-    padding: 1rem;
+    padding: 1.1rem 1.3rem;
     border-radius: 1rem;
     border: 1px solid var(--slate-200);
+    font-size: 0.95rem;
+    background: #fafafa;
+}
+
+.form-control:focus {
+    background: white;
+    border-color: var(--clinic-blue);
+    box-shadow: 0 0 0 4px rgba(0,74,173,0.1);
 }
 
 /* FLOATING CTA */
