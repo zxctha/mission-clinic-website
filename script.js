@@ -28,36 +28,41 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Booking Form Submission
-    const bookingForm = document.getElementById('bookingForm');
-    if (bookingForm) {
-        bookingForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const btn = e.target.querySelector('button[type="submit"]');
-            const originalContent = btn.innerHTML;
-            
-            btn.innerHTML = '<span class="loader"></span> Processing...';
-            btn.disabled = true;
+   // Booking Form Submission (EMAILJS VERSION)
+const bookingForm = document.getElementById('bookingForm');
 
-            setTimeout(() => {
-                const container = document.querySelector('.form-side');
-                container.innerHTML = `
-                    <div style="text-align: center; padding: 2rem;">
-                         <div style="width: 80px; height: 80px; background: #dcfce7; color: #16a34a; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem;">
-                            <i data-lucide="check-circle-2" size="48"></i>
-                         </div>
-                         <h2 style="font-size: 2rem; margin-bottom: 1rem;">Submission Successful!</h2>
-                         <p style="color: #64748b; margin-bottom: 2rem;">Thank you for choosing Mission Lab. Our team will contact you shortly to confirm your slot.</p>
-                         <a href="index.html" class="btn btn-primary">Back to Home</a>
-                    </div>
-                `;
-                lucide.createIcons();
-            }, 1500);
+if (bookingForm) {
+    bookingForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const btn = this.querySelector('button[type="submit"]');
+        btn.innerHTML = 'Sending...';
+        btn.disabled = true;
+
+        // 🔥 KUHANIN DATA
+        const data = {
+            name: this.querySelector('input[placeholder="Juan Dela Cruz"]').value,
+            phone: this.querySelector('input[placeholder="0912 345 6789"]').value,
+            service: this.querySelector('select').value,
+            date: this.querySelector('input[type="date"]').value
+        };
+
+        // 🔥 SEND EMAIL
+        emailjs.send("service_zs1jkqj", "YOUR_TEMPLATE_ID", data)
+        .then(() => {
+            const container = document.querySelector('.form-side');
+            container.innerHTML = `
+                <div style="text-align: center; padding: 2rem;">
+                    <h2>✅ Appointment Sent!</h2>
+                    <p>We will contact you shortly.</p>
+                </div>
+            `;
+        })
+        .catch((error) => {
+            alert("❌ Failed to send. Check your setup.");
+            console.error(error);
+            btn.innerHTML = 'Confirm Appointment Request';
+            btn.disabled = false;
         });
-    }
-
-    // Lucide Icons Initialization
-    if (typeof lucide !== 'undefined') {
-        lucide.createIcons();
-    }
-});
+    });
+}
