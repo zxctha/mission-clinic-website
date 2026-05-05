@@ -358,10 +358,15 @@ header.header-dark .nav-link.active {
 }
 
 /* LEFT SIDE */
-.booking-info {
-    background: var(--clinic-blue);
-    color: white;
-    padding: 3rem;
+.check-icon {
+    width: 35px;
+    height: 35px;
+    background: var(--clinic-yellow);
+    color: var(--slate-900);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* RIGHT SIDE */
