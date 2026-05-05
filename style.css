@@ -396,3 +396,10 @@ header.header-dark .nav-link.active {
 .booking-box {
     border: 1px solid var(--slate-100);
 }
+
+.appointment-btn {
+    width: 100%;
+    font-size: 1.1rem;
+    padding: 1.2rem;
+    box-shadow: 0 10px 25px rgba(0,74,173,0.3);
+}
