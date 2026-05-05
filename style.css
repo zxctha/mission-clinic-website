@@ -358,7 +358,19 @@ header.header-dark .nav-link.active {
 }
 
 /* LEFT SIDE */
+.booking-info {
+    background: var(--clinic-blue);
+    color: white;
+    padding: 4rem;
+}
 
+.booking-info p {
+    opacity: 0.8;
+}
+
+.booking-info strong {
+    color: white;
+}
 
 /* RIGHT SIDE */
 .form-side {
@@ -381,19 +393,13 @@ header.header-dark .nav-link.active {
 }
 /* FORCE FIX BUTTON SIZE */
 .form-side button {
-    width: auto !important;
-    max-width: 300px;
-    display: inline-block !important;
-    height: auto !important;
-    padding: 0.9rem 2rem !important;
-    font-size: 1rem;
-    border-radius: 999px;
+    width: 100% !important;
+    display: block !important;
 }
 
 .form-side {
     padding: 4rem;
-    background: rgba(255,255,255,0.9);
-    backdrop-filter: blur(10px);
+    background: linear-gradient(to bottom, #ffffff, #f8fafc);
 }
 
 /* Add soft separation */
@@ -419,4 +425,10 @@ header.header-dark .nav-link.active {
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
+}
+
+.check-item {
+    display: flex;
+    gap: 1.25rem;
+    align-items: flex-start;
 }
