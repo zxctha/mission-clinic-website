@@ -133,16 +133,17 @@ header.header-dark .nav-link.active {
 }
 
 .btn-primary {
-    background: linear-gradient(135deg, #004aad, #0066ff);
+    background: var(--clinic-blue);
     color: white;
-    font-weight: 600;
-    letter-spacing: 0.3px;
-    box-shadow: 0 10px 20px rgba(0,74,173,0.25);
 }
 
-.btn-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 15px 25px rgba(0,74,173,0.35);
+.btn-outline {
+    border: 2px solid var(--clinic-blue);
+    color: var(--clinic-blue);
+}
+
+.btn-yellow {
+    background: var(--clinic-yellow);
 }
 
 /* HERO */
@@ -239,6 +240,13 @@ header.header-dark .nav-link.active {
     background: var(--slate-50);
 }
 
+/* FORM */
+.form-control {
+    width: 100%;
+    padding: 1rem;
+    border-radius: 1rem;
+    border: 1px solid var(--slate-200);
+}
 
 /* FLOATING CTA */
 .floating-cta {
@@ -368,76 +376,12 @@ header.header-dark .nav-link.active {
     box-shadow: 0 10px 20px rgba(0,0,0,0.15);
 }
 /* FORCE FIX BUTTON SIZE */
-.form-side {
-    padding: 3rem;
-    background: white;
-    position: relative;
-}
-
-/* subtle highlight */
-.form-side::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 5px;
-    height: 100%;
-    background: linear-gradient(to bottom, #004aad, #ffde59);
-    border-radius: 10px 0 0 10px;
-}
-
-/* MODERN INPUT */
-.form-control {
-    width: 100%;
-    padding: 1rem 1.1rem;
-    border-radius: 0.9rem;
-    border: 1.5px solid var(--slate-200);
-    background: #f9fbff;
-    transition: all 0.25s ease;
-    font-size: 0.95rem;
-}
-
-.form-control:focus {
-    border-color: var(--clinic-blue);
-    background: white;
-    box-shadow: 0 0 0 4px rgba(0,74,173,0.1);
-    outline: none;
-}
-
-.booking-info h2 {
-    font-family: var(--font-display);
-    font-weight: 700;
-}
-
-.booking-info p {
-    font-size: 0.95rem;
-}
-
-.form-control:hover {
-    border-color: var(--clinic-blue);
-}
-
-
-.form-group {
-    margin-bottom: 1.5rem;
-}
-
-.form-group label {
-    font-size: 0.85rem;
-    font-weight: 600;
-    color: var(--slate-600);
-    display: block;
-    margin-bottom: 0.4rem;
-}
-
 .form-side button {
     width: auto !important;
     max-width: 300px;
-}
-
-.form-side button {
-    width: auto;
-    max-width: 300px;
-    display: inline-flex;
-    justify-content: center;
+    display: inline-block !important;
+    height: auto !important;
+    padding: 0.9rem 2rem !important;
+    font-size: 1rem;
+    border-radius: 999px;
 }
