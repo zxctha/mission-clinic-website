@@ -4,113 +4,184 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us | Mission Lab CDO</title>
+
     <link rel="stylesheet" href="style.css">
+
+    <!-- LUCIDE ICONS -->
     <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- EMAILJS -->
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+    <script>
+    (function(){
+        emailjs.init("212mOCOcr3tgYjskP"); // ✅ tama na ito (public key mo)
+    })();
+    </script>
 </head>
 
-    
-<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-
-<script>
-(function(){
-  emailjs.init("212mOCOcr3tgYjskP"); // 🔥 palitan mo ito
-})();
-</script>    
-    
 <body>
+
+    <!-- HEADER -->
     <header class="header-dark">
         <div class="container nav-container">
+
             <a href="index.html" class="logo">
-            <img src="logo.png" style="height:50px; margin-right:10px;">
-            <div class="logo-text">
-                <h1>MISSION LAB</h1>
-                <span>Medical Clinic</span>
-            </div>
-        </a>
+                <img src="logo.png" style="height:50px; margin-right:10px;">
+                <div class="logo-text">
+                    <h1>MISSION LAB</h1>
+                    <span>Medical Clinic</span>
+                </div>
+            </a>
+
             <nav class="desktop-nav">
                 <a href="index.html" class="nav-link">Home</a>
                 <a href="services.html" class="nav-link">Services</a>
                 <a href="about.html" class="nav-link">About Us</a>
                 <a href="contact.html" class="nav-link active">Contact</a>
             </nav>
+
             <div class="nav-actions">
                 <a href="booking.html" class="btn btn-primary">Book Now</a>
             </div>
+
         </div>
     </header>
 
+    <!-- MAIN -->
     <main>
-        <section class="section-padding bg-blue" style="padding-top: 10rem;">
+
+        <!-- HERO -->
+        <section class="section-padding bg-blue" style="padding-top: 8rem;">
             <div class="container" style="text-align: center;">
                 <h1 style="font-size: 4rem; color: white;">Get in Touch</h1>
-                <p style="color: rgba(255,255,255,0.8);">Reach out to us for inquiries or pricing details.</p>
+                <p style="color: rgba(255,255,255,0.8);">
+                    Reach out to us for inquiries or pricing details.
+                </p>
             </div>
         </section>
 
+        <!-- CONTACT -->
         <section class="section-padding">
             <div class="container grid-2">
+
+                <!-- LEFT -->
                 <div>
                     <h2 style="margin-bottom: 2rem;">Contact Information</h2>
+
                     <div style="display: flex; flex-direction: column; gap: 2rem;">
+
                         <div style="display: flex; gap: 1.5rem;">
                             <div class="service-icon"><i data-lucide="map-pin"></i></div>
                             <div>
                                 <h4>Our Location</h4>
-                                <p style="color: var(--slate-600);">#3 El Elyon Bldg. JR Borja Corner Tiano Bros. St., CDO</p>
+                                <p style="color: var(--slate-600);">
+                                    #3 El Elyon Bldg. JR Borja Corner Tiano Bros. St., CDO
+                                </p>
                             </div>
                         </div>
+
                         <div style="display: flex; gap: 1.5rem;">
                             <div class="service-icon"><i data-lucide="phone"></i></div>
                             <div>
                                 <h4>Phone Numbers</h4>
-                                <p style="color: var(--slate-600);">0966 902 0517 / 0945 642 8106</p>
+                                <p style="color: var(--slate-600);">
+                                    0966 902 0517 / 0945 642 8106
+                                </p>
                             </div>
                         </div>
+
                         <div style="display: flex; gap: 1.5rem;">
                             <div class="service-icon"><i data-lucide="mail"></i></div>
                             <div>
                                 <h4>Email</h4>
-                                <p style="color: var(--slate-600);">missionlab.ph@gmail.com / missionlab.hrdepartment@gmail.com</p>
+                                <p style="color: var(--slate-600);">
+                                    missionlab.ph@gmail.com <br>
+                                    missionlab.hrdepartment@gmail.com
+                                </p>
                             </div>
                         </div>
+
                     </div>
                 </div>
+
+                <!-- FORM -->
                 <div style="background: var(--slate-50); padding: 3rem; border-radius: 2rem;">
+                    
                     <form id="contactForm">
+
                         <div class="form-group">
                             <label>Name</label>
-                            <input type="text" class="form-control" required>
+                            <input type="text" id="name" class="form-control" required>
                         </div>
+
                         <div class="form-group">
                             <label>Email</label>
-                            <input type="email" class="form-control" required>
+                            <input type="email" id="email" class="form-control" required>
                         </div>
+
                         <div class="form-group">
                             <label>Message</label>
-                            <textarea class="form-control" rows="4" required></textarea>
+                            <textarea id="message" class="form-control" rows="4" required></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">
+                            Send Message
+                        </button>
+
                     </form>
+
                 </div>
+
             </div>
         </section>
+
+        <!-- MAP -->
         <section style="height: 400px;">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126290.04505166085!2d124.580468!3d8.477217!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!1m3!1m2!1s0x32ff93da82d02b0d%3A0x6b77242131d10214!2sCagayan%20de%20Oro%2C%20Misamis%20Oriental!5e0!3m2!1sen!2sph!4v1714800000000!5m2!1sen!2sph" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126290.04505166085!2d124.580468!3d8.477217"
+                width="100%" height="100%" style="border:0;" loading="lazy">
+            </iframe>
         </section>
+
     </main>
 
+    <!-- FOOTER -->
     <footer style="margin-top: 4rem;">
         <div class="container footer-bottom">
             <p>&copy; 2026 Mission Laboratory Medical Clinic. All rights reserved.</p>
         </div>
     </footer>
+
+    <!-- ICON FIX -->
+    <script>
+    window.addEventListener("load", () => {
+        if (window.lucide) {
+            lucide.createIcons();
+        }
+    });
+    </script>
+
+    <!-- CONTACT EMAILJS SCRIPT -->
+    <script>
+    document.getElementById("contactForm").addEventListener("submit", function(e){
+        e.preventDefault();
+
+        emailjs.send("service_zs1jkqj", "template_contact", {
+            name: document.getElementById("name").value,
+            email: document.getElementById("email").value,
+            message: document.getElementById("message").value
+        })
+        .then(function(){
+            alert("Message sent successfully!");
+        }, function(error){
+            alert("Failed to send message");
+            console.log(error);
+        });
+    });
+    </script>
+
     <script src="script.js"></script>
+
 </body>
 </html>
-
-<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-<script>
-  (function(){
-    emailjs.init("YOUR_PUBLIC_KEY");
-  })();
-</script>
