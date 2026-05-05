@@ -375,26 +375,22 @@ header.header-dark .nav-link.active {
     box-shadow: 0 10px 20px rgba(0,0,0,0.15);
 }
 /* FORCE FIX BUTTON SIZE */
-.form-side button {
-    width: auto !important;
-    max-width: 300px;
-    display: inline-block !important;
-    height: auto !important;
-    padding: 0.9rem 2rem !important;
-    font-size: 1rem;
-    border-radius: 999px;
+.form-side {
+    padding: 3rem;
+    background: white;
+    position: relative;
 }
 
-.form-group {
-    margin-bottom: 1.5rem;
-}
-
-.form-group label {
-    font-size: 0.85rem;
-    font-weight: 600;
-    color: var(--slate-600);
-    display: block;
-    margin-bottom: 0.4rem;
+/* subtle highlight */
+.form-side::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background: linear-gradient(to bottom, #004aad, #ffde59);
+    border-radius: 10px 0 0 10px;
 }
 
 /* MODERN INPUT */
