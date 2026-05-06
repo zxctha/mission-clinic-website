@@ -660,10 +660,12 @@ header.header-dark .nav-link.active {
     transition: 0.3s;
 }
 
-.mission-card:hover,
+.mission-card:hover {
+    transform: translateY(-10px) scale(1.02);
+}
+
 .vision-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 25px 50px rgba(0,0,0,0.1);
+    transform: translateY(-10px) scale(1.02);
 }
 
 
