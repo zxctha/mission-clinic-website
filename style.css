@@ -578,17 +578,6 @@ header.header-dark .nav-link.active {
     margin-top: 2rem;
 }
 
-.about-image {
-    position: relative;
-}
-
-.about-image::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: 2rem;
-    background: linear-gradient(to top, rgba(0,0,0,0.2), transparent);
-}
 
 /* ABOUT PAGE IMAGE */
 .about-image img {
