@@ -687,3 +687,16 @@ header.header-dark .nav-link.active {
     font-size: 0.9rem;
     color: var(--slate-500);
 }
+
+.feature-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 1.5rem;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    text-align: center;
+    transition: 0.3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-8px);
+}
