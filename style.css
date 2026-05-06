@@ -567,10 +567,12 @@ header.header-dark .nav-link.active {
 
 .hero-badge {
     display: inline-block;
-    background: rgba(255,255,255,0.15);
+    background: var(--clinic-blue-light);
+    color: var(--clinic-blue);
     padding: 0.4rem 1rem;
     border-radius: 999px;
     font-size: 0.75rem;
+    font-weight: 700;
     margin-bottom: 1rem;
 }
 
