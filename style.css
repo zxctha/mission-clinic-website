@@ -432,3 +432,11 @@ header.header-dark .nav-link.active {
     gap: 1.25rem;
     align-items: flex-start;
 }
+
+
+.hero-image img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 2rem;
+}
