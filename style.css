@@ -611,3 +611,10 @@ header.header-dark .nav-link.active {
     border-radius: 2rem;
     background: linear-gradient(to top, rgba(0,0,0,0.2), transparent);
 }
+
+.about-text {
+    color: var(--slate-600);
+    font-size: 1.125rem;
+    margin-bottom: 2.5rem;
+    line-height: 1.6;
+}
