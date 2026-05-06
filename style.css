@@ -631,9 +631,11 @@ header.header-dark .nav-link.active {
 .mission-card {
     background: var(--clinic-blue);
     color: white;
-    padding: 3rem;
-    border-radius: 2rem;
+    padding: 4rem;
+    border-radius: 3rem;
+    transition: 0.3s;
 }
+
 
 .vision-card {
     background: var(--clinic-yellow);
