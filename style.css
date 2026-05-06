@@ -459,3 +459,11 @@ header.header-dark .nav-link.active {
 
     margin-bottom: 1.5rem; /* 🔥 eto yung fix sa dikit issue */
 }
+
+.logo img {
+    height: 50px;
+    width: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
