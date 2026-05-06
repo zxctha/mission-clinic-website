@@ -477,10 +477,12 @@ header.header-dark .nav-link.active {
 }
 
 .services-hero {
+    position: relative; /* 🔥 ADD */
     background: linear-gradient(135deg, #004aad, #003a8a);
     color: white;
-    padding: 6rem 0 5rem;
+    padding: 7rem 0 6rem;
     text-align: center;
+    overflow: hidden; /* 🔥 ADD */
 }
 
 .services-hero h1 {
@@ -494,4 +496,26 @@ header.header-dark .nav-link.active {
     opacity: 0.9;
     max-width: 600px;
     margin: auto;
+}
+
+.services-hero::before {
+    content: "";
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 50%;
+    top: -100px;
+    left: -100px;
+}
+
+.services-hero::after {
+    content: "";
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 50%;
+    bottom: -100px;
+    right: -100px;
 }
