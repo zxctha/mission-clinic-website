@@ -486,13 +486,14 @@ header.header-dark .nav-link.active {
 }
 
 .services-hero h1 {
-    font-size: 3rem;
-    font-weight: 800;
+    font-size: 3.5rem;
+    font-weight: 900;
+    letter-spacing: -1px;
     margin-bottom: 1rem;
 }
 
 .services-hero p {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     opacity: 0.9;
     max-width: 600px;
     margin: auto;
@@ -518,4 +519,17 @@ header.header-dark .nav-link.active {
     border-radius: 50%;
     bottom: -100px;
     right: -100px;
+}
+
+.hero-badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.15);
+    padding: 0.4rem 1rem;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.hero-actions {
+    margin-top: 2rem;
 }
