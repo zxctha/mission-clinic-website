@@ -700,3 +700,11 @@ header.header-dark .nav-link.active {
 .feature-card:hover {
     transform: translateY(-8px);
 }
+
+.gallery-img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 1.5rem;
+    transition: 0.3s;
+}
