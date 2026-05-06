@@ -114,9 +114,9 @@ header.header-dark .nav-link.active {
 
 .logo-text span {
     font-size: 0.75rem;
-    font-weight: 500;
-    color: var(--slate-500);
-    letter-spacing: 0.1em;
+    font-weight: 600;
+    color: var(--clinic-yellow); /* 🔥 mas standout */
+    letter-spacing: 0.08em;
 }
 
 /* NAV ACTIONS */
@@ -466,4 +466,12 @@ header.header-dark .nav-link.active {
     object-fit: cover;
     border-radius: 50%;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.logo:hover img {
+    transform: scale(1.05);
+}
+
+.logo img {
+    transition: 0.3s ease;
 }
