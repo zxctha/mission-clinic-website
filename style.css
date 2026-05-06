@@ -607,3 +607,39 @@ header.header-dark .nav-link.active {
     margin-bottom: 2.5rem;
     line-height: 1.6;
 }
+
+
+.mission-card {
+    background: var(--clinic-blue);
+    color: white;
+    padding: 3rem;
+    border-radius: 2rem;
+}
+
+.vision-card {
+    background: var(--clinic-yellow);
+    color: var(--slate-900);
+    padding: 3rem;
+    border-radius: 2rem;
+}
+
+.icon-box {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.mission-card,
+.vision-card {
+    transition: 0.3s;
+}
+
+.mission-card:hover,
+.vision-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.1);
+}
