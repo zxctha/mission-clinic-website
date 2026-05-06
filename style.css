@@ -164,6 +164,7 @@ header.header-dark .nav-link.active {
 
 .hero-content p {
     margin-top: 1rem;
+    margin-bottom: 2rem; /* 🔥 DAGDAG MO ITO */
     color: var(--slate-600);
 }
 
