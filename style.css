@@ -660,14 +660,21 @@ header.header-dark .nav-link.active {
     transition: 0.3s;
 }
 
-.mission-card:hover {
-    transform: translateY(-10px) scale(1.02);
-}
-
+.mission-card:hover,
 .vision-card:hover {
     transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.2);
 }
 
+.about-image::after {
+    pointer-events: none;
+}
+
+.mission-card,
+.vision-card {
+    position: relative;
+    z-index: 2;
+}
 
 .about-stats {
     display: flex;
