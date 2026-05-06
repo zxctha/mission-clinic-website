@@ -436,3 +436,20 @@ header.header-dark .nav-link.active {
     object-fit: cover;
     border-radius: 2rem;
 }
+
+.trust-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    padding: 0.5rem 1rem;
+    background: var(--clinic-blue-light);
+    color: var(--clinic-blue);
+
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+
+    margin-bottom: 1.5rem; /* 🔥 eto yung fix sa dikit issue */
+}
