@@ -172,10 +172,6 @@ header.header-dark .nav-link.active {
     position: relative;
 }
 
-.hero-image img {
-    width: 100%;
-    border-radius: 2rem;
-}
 
 /* FLOATING CARDS */
 .floating-card {
