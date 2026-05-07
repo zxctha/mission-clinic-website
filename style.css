@@ -1100,3 +1100,50 @@ header.header-dark .nav-link.active {
     color: var(--slate-600);
     line-height: 1.7;
 }
+
+/* TESTIMONIALS */
+
+.testimonials {
+    background: #f8fafc;
+}
+
+.testimonial-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 2rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+}
+
+.testimonial-card p {
+    color: var(--slate-600);
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    font-style: italic;
+}
+
+.testimonial-card h4 {
+    color: var(--clinic-blue);
+    margin-bottom: 0.3rem;
+    font-size: 1rem;
+}
+
+.testimonial-card span {
+    color: var(--slate-500);
+    font-size: 0.9rem;
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+    .testimonial-card {
+        padding: 1.5rem;
+    }
+
+}
