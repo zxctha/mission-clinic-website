@@ -1108,7 +1108,7 @@ header.header-dark .nav-link.active {
 
 .testimonials {
     background: #f8fafc;
-    padding: 6rem 0;
+    padding: 8rem 0 6rem;
 }
 
 .testimonial-card {
@@ -1144,9 +1144,19 @@ header.header-dark .nav-link.active {
 }
 
 .testimonials .section-header {
-    margin-bottom: 3rem;
+    margin-bottom: 4rem;
+    position: relative;
+    z-index: 10;
 }
 
+.testimonials .grid-3 {
+    margin-top: 2rem;
+}
+
+.testimonial-card {
+    position: relative;
+    z-index: 1;
+}
 
 /* MOBILE */
 
