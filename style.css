@@ -1031,3 +1031,33 @@ header.header-dark .nav-link.active {
         padding: 2rem;
     }
 }
+
+/* CONTACT SUBMIT BUTTON */
+.contact-submit-btn {
+    width: 100%;
+    border: none;
+    border-radius: 999px;
+
+    padding: 1.1rem 2rem;
+
+    background: linear-gradient(135deg, #004aad, #003a8a);
+    color: white;
+
+    font-size: 1rem;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+
+    box-shadow: 0 15px 30px rgba(0,74,173,0.25);
+}
+
+.contact-submit-btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(0,74,173,0.35);
+}
+
+.contact-submit-btn:active {
+    transform: scale(0.98);
+}
