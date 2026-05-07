@@ -1108,6 +1108,7 @@ header.header-dark .nav-link.active {
 
 .testimonials {
     background: #f8fafc;
+    padding: 6rem 0;
 }
 
 .testimonial-card {
@@ -1116,6 +1117,7 @@ header.header-dark .nav-link.active {
     border-radius: 2rem;
     box-shadow: 0 10px 30px rgba(0,0,0,0.05);
     transition: all 0.3s ease;
+    min-height: 180px;
 }
 
 .testimonial-card:hover {
@@ -1140,6 +1142,11 @@ header.header-dark .nav-link.active {
     color: var(--slate-500);
     font-size: 0.9rem;
 }
+
+.testimonials .section-header {
+    margin-bottom: 3rem;
+}
+
 
 /* MOBILE */
 
