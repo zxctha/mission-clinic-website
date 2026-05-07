@@ -177,12 +177,34 @@
             message: document.getElementById("message").value
         })
         .then(function(){
-            alert("Message sent successfully!");
-        }, function(error){
-            alert("Failed to send message");
-            console.log(error);
-        });
-    });
+
+const button = document.querySelector(".contact-submit-btn");
+
+button.innerHTML = "✅ Inquiry Sent!";
+button.style.background = "#16a34a";
+
+document.getElementById("contactForm").reset();
+
+setTimeout(() => {
+
+    button.innerHTML = `
+        <i data-lucide="send"></i>
+        Send Inquiry
+    `;
+
+    button.style.background = "";
+
+    lucide.createIcons();
+
+}, 3000);
+
+}, function(error){
+
+alert("Failed to send message");
+console.log(error);
+
+});
+});
     </script>
 
     <script src="script.js"></script>
