@@ -768,3 +768,110 @@ header.header-dark .nav-link.active {
     color: var(--slate-600);
     line-height: 1.6;
 }
+
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+
+    /* HERO */
+    .booking-hero {
+        padding: 3rem 1.5rem;
+    }
+
+    .booking-hero h1 {
+        font-size: 2rem;
+        line-height: 1.2;
+    }
+
+    .booking-hero p {
+        font-size: 0.95rem;
+    }
+
+    /* BOOKING BOX */
+    .booking-box {
+        grid-template-columns: 1fr;
+        border-radius: 2rem;
+    }
+
+    /* LEFT PANEL */
+    .booking-info {
+        padding: 2rem;
+    }
+
+    .booking-info h2 {
+        font-size: 1.8rem !important;
+    }
+
+    .booking-info p {
+        font-size: 0.95rem;
+    }
+
+    /* FORM SIDE */
+    .form-side {
+        padding: 2rem;
+    }
+
+    /* GRID FIX */
+    .grid-2,
+    .grid-3 {
+        grid-template-columns: 1fr;
+    }
+
+    /* BUTTON */
+    .appointment-btn {
+        width: 100%;
+        min-width: unset;
+    }
+
+    /* DOCTOR CARDS */
+    .doctor-card {
+        padding: 1.5rem;
+    }
+
+    .doctor-card h3 {
+        font-size: 1.1rem;
+    }
+
+    .doctor-card strong {
+        font-size: 1rem;
+    }
+
+    /* NAV */
+    .nav-container {
+        gap: 1rem;
+    }
+
+    .logo-text h1 {
+        font-size: 1rem;
+    }
+
+    .logo-text span {
+        font-size: 0.65rem;
+    }
+
+    .btn {
+        padding: 0.7rem 1rem;
+        font-size: 0.85rem;
+    }
+
+    /* FORM INPUTS */
+    .form-control {
+        padding: 1rem;
+        font-size: 0.95rem;
+    }
+
+    /* SECTION SPACING */
+    .section-padding {
+        padding: 4rem 0;
+    }
+
+    /* DOCTOR SECTION */
+    .section-header h2 {
+        font-size: 2rem;
+    }
+
+    .section-header p {
+        font-size: 0.95rem;
+    }
+}
