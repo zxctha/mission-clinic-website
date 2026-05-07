@@ -137,14 +137,21 @@ header.header-dark .nav-link.active {
     transition: 0.2s;
 }
 
-.btn-primary {
-    background: var(--clinic-blue);
-    color: white;
+/* BUTTON HOVER EFFECTS */
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(0,74,173,0.25);
 }
 
-.btn-outline {
-    border: 2px solid var(--clinic-blue);
-    color: var(--clinic-blue);
+.btn-outline:hover {
+    background: var(--clinic-blue);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(0,74,173,0.15);
+}
+
+.btn {
+    transition: all 0.3s ease;
 }
 
 .btn-yellow {
