@@ -106,17 +106,20 @@ header.header-dark .nav-link.active {
 }
 
 .logo-text h1 {
-    font-size: 1.3rem;
+    font-size: 1.8rem;
     font-weight: 800;
-    letter-spacing: 0.5px;
     color: var(--clinic-blue);
+    line-height: 1;
+    letter-spacing: -0.5px;
+    margin-bottom: 0.2rem;
 }
 
 .logo-text span {
-    font-size: 0.75rem;
+    font-size: 0.9rem;
     font-weight: 600;
-    color: var(--clinic-yellow); /* 🔥 mas standout */
-    letter-spacing: 0.08em;
+    color: var(--clinic-yellow);
+    letter-spacing: 2px;
+    text-transform: uppercase;
 }
 
 /* NAV ACTIONS */
