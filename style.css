@@ -590,6 +590,22 @@ header.header-dark .nav-link.active {
     right: -100px;
 }
 
+.services-hero .container {
+    position: relative;
+    z-index: 2;
+}
+
+.services-hero::before,
+.services-hero::after {
+    pointer-events: none;
+}
+
+.hero-actions {
+    position: relative;
+    z-index: 5;
+    margin-top: 2rem;
+}
+
 .hero-badge {
     display: inline-block;
     background: var(--clinic-blue-light);
@@ -599,10 +615,6 @@ header.header-dark .nav-link.active {
     font-size: 0.75rem;
     font-weight: 700;
     margin-bottom: 1rem;
-}
-
-.hero-actions {
-    margin-top: 2rem;
 }
 
 
