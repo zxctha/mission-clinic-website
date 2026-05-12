@@ -787,7 +787,9 @@ linear-gradient(
 .booking-hero {
     background: linear-gradient(135deg, #004aad, #003a8a);
     color: white;
-    padding: 3.5rem 0 3rem;
+    padding: 7rem 0 3rem;
+    position: relative;
+    overflow: hidden;
     text-align: center;
 }
 
