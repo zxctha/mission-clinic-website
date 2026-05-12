@@ -132,6 +132,7 @@ header.header-dark .nav-link.active {
 /* BUTTONS */
 .btn {
     padding: 0.75rem 1.5rem;
+    transition: all 0.3s ease;
     border-radius: 999px;
     font-weight: 600;
     cursor: pointer;
@@ -161,10 +162,6 @@ header.header-dark .nav-link.active {
     color: white;
     transform: translateY(-3px);
     box-shadow: 0 15px 30px rgba(0,74,173,0.15);
-}
-
-.btn {
-    transition: all 0.3s ease;
 }
 
 .btn-yellow {
@@ -527,6 +524,7 @@ header.header-dark .nav-link.active {
 }
 
 .logo img {
+    transition: 0.3s ease;
     height: 50px;
     width: 50px;
     object-fit: cover;
@@ -538,9 +536,6 @@ header.header-dark .nav-link.active {
     transform: scale(1.05);
 }
 
-.logo img {
-    transition: 0.3s ease;
-}
 
 .services-hero {
     position: relative;
