@@ -137,7 +137,6 @@ header.header-dark .nav-link.active {
     cursor: pointer;
     display: inline-flex;
     gap: 0.5rem;
-    transition: 0.2s;
 }
 
 .btn-primary {
@@ -979,10 +978,12 @@ header.header-dark .nav-link.active {
 
 /* MOBILE FOOTER */
 @media (max-width: 768px) {
+
     .footer-content {
-        flex-direction: column;
+        grid-template-columns: 1fr;
         text-align: center;
     }
+
 }
 
 /* CONTACT PAGE */
@@ -1115,34 +1116,6 @@ header.header-dark .nav-link.active {
 
 .contact-submit-btn:active {
     transform: scale(0.98);
-}
-
-/* DOCTORS SECTION */
-.doctor-card {
-    background: white;
-    padding: 2rem;
-    border-radius: 2rem;
-
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-
-    transition: all 0.3s ease;
-
-    border: 1px solid rgba(0,0,0,0.03);
-}
-
-.doctor-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
-}
-
-.doctor-card h3 {
-    color: var(--clinic-blue);
-    margin-bottom: 0.75rem;
-}
-
-.doctor-card p {
-    color: var(--slate-600);
-    line-height: 1.7;
 }
 
 /* TESTIMONIALS */
