@@ -1354,3 +1354,14 @@ header {
 .social-link:hover {
     color: var(--clinic-yellow);
 }
+
+/* MESSENGER BUTTON */
+
+.messenger-btn {
+    background: #0084ff;
+    color: white;
+}
+
+.messenger-btn:hover {
+    transform: translateY(-3px);
+}
