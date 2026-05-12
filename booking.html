@@ -133,7 +133,7 @@
 
                             <div class="form-group" style="margin: 0;">
                                 <label>Preferred Date</label>
-                                <input type="date" name="preferredDate" class="form-control" required>
+                                <input type="date" id="preferredDate" name="preferredDate" class="form-control" required>
                             </div>
                         </div>
 
@@ -191,12 +191,22 @@ document.getElementById("bookingForm").addEventListener("submit", function(e){
     }).catch((error) => {
         console.error(error);
         alert("❌ Failed to send. Check template ID.");
-        btn.innerHTML = "Confirm Appointment Request";
+        btn.innerHTML = "📅 Book Appointment Now";
         btn.disabled = false;
     });
 });
 </script>
 
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+    const today = new Date().toISOString().split("T")[0];
+
+    document.getElementById("preferredDate").setAttribute("min", today);
+
+});
+</script>
+    
     <!-- LUCIDE INIT -->
     <script>
     window.addEventListener("load", () => {
