@@ -548,12 +548,15 @@ header.header-dark .nav-link.active {
 }
 
 .services-hero {
-    position: relative; /* 🔥 ADD */
+    position: relative;
     background: linear-gradient(135deg, #004aad, #003a8a);
     color: white;
-    padding: 7rem 0 6rem;
+
+    padding-top: 4rem;
+    padding-bottom: 5rem;
+
     text-align: center;
-    overflow: hidden; /* 🔥 ADD */
+    overflow: hidden;
 }
 
 .services-hero h1 {
@@ -573,8 +576,8 @@ header.header-dark .nav-link.active {
 .services-hero::before {
     content: "";
     position: absolute;
-    width: 500px;
-    height: 500px;
+    width: 350px;
+    height: 350px;
     background: rgba(255,255,255,0.05);
     border-radius: 50%;
     top: -100px;
