@@ -1319,3 +1319,19 @@ header {
     position: relative;
     z-index: 1000;
 }
+
+/* HIDE MOBILE MENU BUTTON ON DESKTOP */
+
+.mobile-menu-btn {
+    display: none;
+}
+
+/* SHOW ONLY ON MOBILE */
+
+@media (max-width: 768px) {
+
+    .mobile-menu-btn {
+        display: flex;
+    }
+
+}
