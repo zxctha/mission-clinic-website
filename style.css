@@ -193,10 +193,6 @@ header.header-dark .nav-link.active {
     line-height: 1.2;
 }
 
-.hero-content h2 {
-    font-size: 2.5rem;
-}
-
 .hero-content p {
     margin-top: 1rem;
     margin-bottom: 2rem; /* 🔥 DAGDAG MO ITO */
@@ -447,9 +443,15 @@ header.header-dark .nav-link.active {
 }
 
 @media (max-width: 768px) {
+
     .booking-box {
         grid-template-columns: 1fr;
     }
+
+    .hero-content h2 {
+        font-size: 2.5rem;
+    }
+
 }
 
 .appointment-btn {
