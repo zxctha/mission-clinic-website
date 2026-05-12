@@ -977,7 +977,7 @@ header.header-dark .nav-link.active {
     position: relative;
     background: linear-gradient(135deg, #004aad, #003a8a);
     color: white;
-    padding: 7rem 0 6rem;
+    padding: 5rem 0 5rem;
     text-align: center;
     overflow: hidden;
 }
@@ -1326,44 +1326,23 @@ header.header-dark .nav-link.active {
 }
 
 .mobile-menu-btn {
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
-
     width: 48px;
     height: 48px;
-
     border-radius: 12px;
-
     cursor: pointer;
-
     z-index: 2000;
     position: relative;
-
     flex-shrink: 0;
 }
 
-header {
-    position: relative;
-    z-index: 1000;
-}
-
-/* HIDE MOBILE MENU BUTTON ON DESKTOP */
-
-.mobile-menu-btn {
-    display: none;
-}
-
-/* SHOW ONLY ON MOBILE */
-
 @media (max-width: 768px) {
-
     .mobile-menu-btn {
         display: flex;
     }
-
 }
-
 
 /* SOCIAL LINK */
 
