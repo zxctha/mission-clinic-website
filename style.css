@@ -71,7 +71,7 @@ header.header-dark .nav-link.active {
 
 /* NAV */
 .container {
-    max-width: 1200px;
+    max-width: 1050px;
     margin: auto;
     padding: 0 1.5rem;
 }
@@ -326,7 +326,7 @@ header.header-dark .nav-link.active {
     border-radius: 1rem;
     border: 1px solid var(--slate-200);
     font-size: 0.95rem;
-    background: #fafafa;
+    background: white;
 }
 
 .form-control:focus {
@@ -418,9 +418,14 @@ header.header-dark .nav-link.active {
 
 /* LEFT SIDE */
 .booking-info {
-    background: var(--clinic-blue);
+    background:
+linear-gradient(
+135deg,
+#004aad,
+#003a8a
+);
     color: white;
-    padding: 4rem;
+    padding: 3rem;
 }
 
 .booking-info p {
@@ -463,7 +468,7 @@ header.header-dark .nav-link.active {
 }
 
 .form-side {
-    padding: 4rem;
+    padding: 2.5rem 3rem;
     background: linear-gradient(to bottom, #ffffff, #f8fafc);
 }
 
@@ -474,8 +479,8 @@ header.header-dark .nav-link.active {
 
 .appointment-btn {
     width: 100%;
-    font-size: 1.1rem;
-    padding: 1.2rem;
+    padding: 1rem;
+    font-size: 1rem;
     box-shadow: 0 10px 25px rgba(0,74,173,0.3);
 }
 
@@ -782,12 +787,12 @@ header.header-dark .nav-link.active {
 .booking-hero {
     background: linear-gradient(135deg, #004aad, #003a8a);
     color: white;
-    padding: 5rem 0 4rem;
+    padding: 3.5rem 0 3rem;
     text-align: center;
 }
 
 .booking-hero h1 {
-    font-size: 3rem;
+    font-size: 2.7rem;
     font-weight: 800;
     margin-bottom: 1rem;
 }
@@ -1378,4 +1383,11 @@ header.header-dark .nav-link.active {
 
 .footer-link:hover {
     color: var(--clinic-yellow);
+}
+
+.booking-note {
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 0.85rem;
+    color: var(--slate-500);
 }
