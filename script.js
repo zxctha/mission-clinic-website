@@ -437,3 +437,16 @@ header.header-dark.scrolled .nav-link.active {
 header.header-dark {
     background: var(--clinic-blue);
 }
+
+// MOBILE MENU
+const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+const mobileMenu = document.querySelector('.mobile-menu');
+const menuClose = document.querySelector('.menu-close');
+
+mobileMenuBtn.addEventListener('click', () => {
+    mobileMenu.classList.add('active');
+});
+
+menuClose.addEventListener('click', () => {
+    mobileMenu.classList.remove('active');
+});
