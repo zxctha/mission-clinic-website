@@ -401,9 +401,6 @@ header.header-dark .nav-link.active {
         display: none;
     }
 
-    .mobile-toggle {
-        display: flex;
-    }
 }
 
 @media (min-width: 1025px) {
