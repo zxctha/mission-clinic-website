@@ -89,8 +89,12 @@ header.header-dark .nav-link.active {
 }
 
 .nav-link {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     color: var(--slate-600);
+
+    white-space: nowrap;
+
+    font-weight: 500;
 }
 
 .nav-link:hover,
@@ -410,9 +414,11 @@ header.header-dark .nav-link.active {
         grid-template-columns: 1fr;
     }
 
-    .desktop-nav {
-        display: none;
-    }
+.desktop-nav {
+    display: flex;
+    gap: 2.5rem;
+    align-items: center;
+}
 
 }
 
