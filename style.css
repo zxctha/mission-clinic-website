@@ -1429,3 +1429,46 @@ linear-gradient(
     font-size: 0.85rem;
     color: var(--slate-500);
 }
+
+
+/* HEALTH PACKAGES */
+
+.packages-section {
+    background: #f8fafc;
+}
+
+.packages-grid {
+    display: grid;
+
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+
+    gap: 2rem;
+
+    margin-top: 4rem;
+}
+
+.package-card {
+    background: white;
+
+    border-radius: 2rem;
+
+    overflow: hidden;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+
+    transition: 0.3s ease;
+
+    cursor: pointer;
+}
+
+.package-card:hover {
+    transform: translateY(-8px);
+}
+
+.package-card img {
+    width: 100%;
+
+    display: block;
+
+    object-fit: cover;
+}
