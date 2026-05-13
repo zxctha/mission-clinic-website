@@ -34,29 +34,3 @@ window.addEventListener('DOMContentLoaded', () => {
 
 // LUCIDE ICONS
 lucide.createIcons();
-
-// PHYSICAL EXAM MODAL
-
-const physicalCard = document.getElementById("physicalExamCard");
-const physicalModal = document.getElementById("physicalExamModal");
-const closePhysicalModal = document.getElementById("closePhysicalModal");
-
-if (physicalCard && physicalModal && closePhysicalModal) {
-
-    physicalCard.addEventListener("click", () => {
-        physicalModal.classList.add("active");
-    });
-
-    closePhysicalModal.addEventListener("click", () => {
-        physicalModal.classList.remove("active");
-    });
-
-    physicalModal.addEventListener("click", (e) => {
-
-        if (e.target === physicalModal) {
-            physicalModal.classList.remove("active");
-        }
-
-    });
-
-}
