@@ -126,13 +126,19 @@ header.header-dark .nav-link.active {
 .nav-actions {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    transform: translateY(-2px);
+    gap: 0.5rem;
+}
+
+.nav-actions .btn-primary {
+    min-width: 140px;
 }
 
 /* BUTTONS */
 .btn {
     padding: 0.75rem 1.5rem;
-    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(234,179,8,0.25);
+    transition: 0.3s ease;
     border-radius: 999px;
     font-weight: 600;
     cursor: pointer;
@@ -143,17 +149,27 @@ header.header-dark .nav-link.active {
 .btn-primary {
     background: var(--clinic-yellow);
     color: var(--slate-900);
+
     border-radius: 999px;
-    padding: 0.9rem 1.5rem;
+
+    padding: 0.8rem 1.5rem;
+
+    font-size: 0.95rem;
     font-weight: 700;
-    transition: all 0.3s ease;
+
+    white-space: nowrap;
     text-decoration: none;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
 }
 
 /* BUTTON HOVER EFFECTS */
 .btn-primary:hover {
     background: var(--clinic-yellow-dark);
-    transform: translateY(-3px);
+    transform: translateY(-2px);
     box-shadow: 0 15px 30px rgba(234,179,8,0.25);
 }
 
