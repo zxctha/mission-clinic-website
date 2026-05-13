@@ -1450,7 +1450,7 @@ linear-gradient(
 .package-card {
     background: white;
 
-    border-radius: 2rem;
+    border-radius: 1.5rem;
 
     overflow: hidden;
 
@@ -1471,4 +1471,16 @@ linear-gradient(
     display: block;
 
     object-fit: cover;
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+    .packages-grid {
+        grid-template-columns: 1fr;
+
+        gap: 1.5rem;
+    }
+
 }
