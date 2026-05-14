@@ -101,7 +101,7 @@ laboratory: [
     "EP 2 — ₱3,850",
     "EP 3 — ₱4,850",
     "EP 4 — ₱5,050",
-
+],
 
     ultrasound: [
         "Whole Abdomen",
