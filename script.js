@@ -150,23 +150,58 @@ laboratory: [
 
 const serviceDetails = {
 
-"Blood Chem Advanced — ₱1,550":
-`
-✔ Includes:
-• FBS
-• Uric Acid
-• Lipid Profile
-• CBC with Platelet
-• SGPT
-• Creatinine
+"Blood Chem Advanced — ₱1,550": `
 
-⚠ Preparation Instructions:
-Please fast for 8-10 hours before your test.
+<div class="detail-section">
 
-✓ Water is allowed
-✓ Avoid coffee and soft drinks
+    <h4>📦 Package Includes</h4>
+
+    <ul>
+        <li>FBS</li>
+        <li>Uric Acid</li>
+        <li>Lipid Profile</li>
+        <li>CBC with Platelet</li>
+        <li>SGPT</li>
+        <li>Creatinine</li>
+    </ul>
+
+</div>
+
+<div class="detail-section warning">
+
+    <h4>⚠ Preparation Reminder</h4>
+
+    <p>
+        Do not eat or drink anything prior to blood collection.
+    </p>
+
+    <br>
+
+    <strong>
+        Strictly Morning Blood Extraction ❗❗
+    </strong>
+
+    <ul>
+        <li>Last meal: 8:00 PM</li>
+        <li>Time of extraction: 6:00 AM</li>
+    </ul>
+
+</div>
+
+<div class="detail-section result">
+
+    <h4>🕒 Estimated Result</h4>
+
+    <p>
+        Available within 1-2 hours.
+    </p>
+
+</div>
 `,
 
+
+
+    
 "Blood Chem Executive — ₱1,750":
 `
 ✔ Includes:
