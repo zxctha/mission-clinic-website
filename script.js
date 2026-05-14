@@ -92,9 +92,9 @@ laboratory: [
     "BCP 4 — ₱1,750",
 
     // PREGNANT PACKAGES
-    "Pregnant Package Basic — ₱650",
-    "Pregnant Package Plus — ₱1,250",
-    "Pregnant Package Complete — ₱2,450",
+    "PP1 — ₱650",
+    "PP2 — ₱1,250",
+    "PP3 — ₱2,450",
 
     // INDIVIDUAL TESTS
     "CBC / Platelet Count",
@@ -170,7 +170,7 @@ const serviceDetails = {
 </div>
 
 <div class="detail-section warning">
-    <h4>⚠ FREE URINALYSIS</h4>
+    <h4>FREE URINALYSIS</h4>
     <h4>⚠ Preparation Reminder</h4>
 
     <p>
@@ -222,7 +222,7 @@ const serviceDetails = {
 </div>
 
 <div class="detail-section warning">
-    <h4>⚠ FREE URINALYSIS</h4>
+    <h4>FREE URINALYSIS</h4>
     <h4>⚠ Preparation Reminder</h4>
 
     <p>
@@ -280,7 +280,7 @@ const serviceDetails = {
 </div>
 
 <div class="detail-section warning">
-    <h4>⚠ FREE URINALYSIS</h4>
+    <h4>FREE URINALYSIS</h4>
     <h4>⚠ Preparation Reminder</h4>
 
     <p>
@@ -312,6 +312,10 @@ const serviceDetails = {
 `,
 
 
+
+
+    
+
 "BCP 4 — ₱1,750": `
 
 <div class="detail-section">
@@ -335,7 +339,7 @@ const serviceDetails = {
 </div>
 
 <div class="detail-section warning">
-    <h4>⚠ FREE URINALYSIS</h4>
+    <h4>FREE URINALYSIS</h4>
     <h4>⚠ Preparation Reminder</h4>
 
     <p>
@@ -366,6 +370,139 @@ const serviceDetails = {
 </div>
 `,
     
+
+"PP1 — ₱650": `
+
+<div class="detail-section">
+
+    <h4>📦 Package Includes</h4>
+
+    <ul>
+        <li>CBC W/ PLT</li>
+        <li>Urinalysis</li>
+        <li>Blood Typing</li>
+        <li>RPR/VDRL</li>
+        <li>HBSAG</li>
+    </ul>
+
+</div>
+
+<div class="detail-section warning">
+
+    <h4>🤰 Preparation Reminder</h4>
+    
+        <ul>
+            <li>Drink plenty of water before urine collection.</li>
+            <li>Avoid salty and sugary foods before the test.</li>
+            <li>Please arrive 15 minutes before your appointment.</li>
+            <li>Bring previous laboratory results if available.</li>
+        </ul>
+    
+    </div>
+    
+
+<div class="detail-section result">
+
+    <h4>🕒 Estimated Result</h4>
+
+    <p>
+        Available within 1-2 hours.
+    </p>
+
+</div>
+`,
+    
+
+
+"PP2 — ₱1,250": `
+
+<div class="detail-section">
+
+    <h4>📦 Package Includes</h4>
+
+    <ul>
+        <li>CBC W/ PLT</li>
+        <li>Urinalysis</li>
+        <li>Blood Typing</li>
+        <li>RPR/VDRL</li>
+        <li>HBSAG</li>
+        <li>HIV</li>
+    </ul>
+
+</div>
+
+<div class="detail-section warning">
+
+    <h4>🤰 Preparation Reminder</h4>
+    
+    <ul>
+        <li>No fasting required unless advised by your doctor.</li>
+        <li>Drink water before urine collection.</li>
+        <li>Please bring a valid ID for laboratory documentation.</li>
+        <li>Arrive 15 minutes before your appointment.</li>
+    </ul>
+    
+    </div>
+    
+    <div class="detail-section result">
+    
+        <h4>🕒 Estimated Result</h4>
+    
+        <p>
+            Available within 1-2 hours.
+        </p>
+
+</div>
+
+`,
+
+
+    
+"PP3 — ₱2,450": `
+
+<div class="detail-section">
+
+    <h4>📦 Package Includes</h4>
+
+    <ul>
+        <li>CBC W/ PLT</li>
+        <li>Urinalysis</li>
+        <li>Blood Typing</li>
+        <li>RPR/VDRL</li>
+        <li>HBSAG</li>
+        <li>HIV</li>
+        <li>Pregnant Ultrasound</li>
+    </ul>
+
+</div>
+
+<div class="detail-section warning">
+
+    <h4>🤰 Preparation Reminder</h4>
+    
+    <ul>
+        <li>No fasting required unless advised by your doctor.</li>
+        <li>Drink plenty of water before ultrasound.</li>
+        <li>Do not urinate before the procedure unless instructed.</li>
+        <li>Please bring a valid ID for laboratory documentation.</li>
+        <li>Arrive 15 minutes before your appointment.</li>
+    </ul>
+    
+    </div>
+    
+    <div class="detail-section result">
+    
+        <h4>🕒 Estimated Result</h4>
+    
+        <p>
+            Available within 1-2 hours.
+        </p>
+
+</div>
+
+`,
+
+
 
 };
 
