@@ -103,6 +103,31 @@ laboratory: [
     "EP 4 — ₱5,050",
 
 
+    ultrasound: [
+        "Whole Abdomen",
+        "Upper / Lower Abdomen",
+        "Pelvic / TAS",
+        "Biophysical Scoring (BPS)"
+    ],
+
+    obgyn: [
+        "Pap Smear",
+        "Prenatal Check-up",
+        "Infertility Work-up"
+    ],
+
+    preemployment: [
+        "PE A - ₱450",
+        "PE B - ₱670"
+    ],
+
+    vaccination: [
+        "Hepa B Vaccine",
+        "Flu Vaccine"
+    ]
+
+    OTHERS: [
+
     // INDIVIDUAL TESTS
     "CBC / Platelet Count",
     "Blood Typing",
@@ -111,7 +136,6 @@ laboratory: [
     "Fecalysis",
     "Pregnancy Test Serum",
     "Pregnancy Test Urine",
-
     "Fasting Blood Sugar (FBS)",
     "Creatinine",
     "Uric Acid",
@@ -151,32 +175,7 @@ laboratory: [
     "Breast w/ Axilla",
     "12-Lead ECG w/ Reading",
     "Drug Testing",
-    "OTHERS"
-
 ],
-
-    ultrasound: [
-        "Whole Abdomen",
-        "Upper / Lower Abdomen",
-        "Pelvic / TAS",
-        "Biophysical Scoring (BPS)"
-    ],
-
-    obgyn: [
-        "Pap Smear",
-        "Prenatal Check-up",
-        "Infertility Work-up"
-    ],
-
-    preemployment: [
-        "PE A - ₱450",
-        "PE B - ₱670"
-    ],
-
-    vaccination: [
-        "Hepa B Vaccine",
-        "Flu Vaccine"
-    ]
 
 };
 
