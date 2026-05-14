@@ -84,14 +84,14 @@ if (galleryImages.length &&
 const services = {
 
     laboratory: [
-        "BCP 1 - ₱1,250",
-        "BCP 2 - ₱1,400",
-        "BCP 3 - ₱1,550",
-        "BCP 4 - ₱1,750",
+        "Blood Chem Package 1 (Basic) — ₱1,250",
+        "Blood Chem Package 2 (With CBC) — ₱1,400",
+        "Blood Chem Package 3 (Advanced) — ₱1,550",
+        "Blood Chem Package 4 (Executive) — ₱1,750",
 
-        "PP1 - ₱650",
-        "PP2 - ₱1,250",
-        "PP3 - ₱2,450"
+        "Pregnant Package 1 (CBC + Urinalysis) — ₱650",
+        "Pregnant Package 2 (With HIV Screening) — ₱1,250",
+        "Pregnant Package 3 (With Ultrasound) — ₱2,450"
     ],
 
     ultrasound: [
