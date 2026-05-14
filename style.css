@@ -480,19 +480,17 @@ linear-gradient(
 @media (max-width: 768px) {
 
     .desktop-nav {
-    display: none;
-    }
-    
-    .mobile-menu-btn {
-        display: flex;
-    }
-    
-    .booking-box {
-        grid-template-columns: 1fr;
+        display: none;
     }
 
-    .hero-content h2 {
-        font-size: 2.5rem;
+    /* HIDE PHONE + BOOK BUTTON LANG */
+    .nav-actions .phone-link,
+    .nav-actions .btn-primary {
+        display: none;
+    }
+
+    .mobile-menu-btn {
+        display: flex;
     }
 
 }
