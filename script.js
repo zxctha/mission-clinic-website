@@ -44,29 +44,40 @@ const imageLightbox = document.getElementById("imageLightbox");
 const lightboxImage = document.getElementById("lightboxImage");
 const lightboxClose = document.getElementById("lightboxClose");
 
-galleryImages.forEach(image => {
+if (galleryImages.length &&
+    imageLightbox &&
+    lightboxImage &&
+    lightboxClose) {
 
-    image.addEventListener("click", () => {
+    galleryImages.forEach(image => {
 
-        imageLightbox.classList.add("active");
+        image.addEventListener("click", () => {
 
-        lightboxImage.src = image.src;
+            imageLightbox.classList.add("active");
+
+            lightboxImage.src = image.src;
+
+        });
 
     });
 
-});
+    lightboxClose.addEventListener("click", () => {
 
-lightboxClose.addEventListener("click", () => {
-    imageLightbox.classList.remove("active");
-});
-
-imageLightbox.addEventListener("click", (e) => {
-
-    if (e.target === imageLightbox) {
         imageLightbox.classList.remove("active");
-    }
-  
-});
+
+    });
+
+    imageLightbox.addEventListener("click", (e) => {
+
+        if (e.target === imageLightbox) {
+
+            imageLightbox.classList.remove("active");
+
+        }
+
+    });
+
+}
 
 // SERVICES DATABASE
 
