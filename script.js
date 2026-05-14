@@ -255,10 +255,20 @@ if (categorySelect && packageSelect) {
 
 }
 
-const serviceDetailsBox =
-document.getElementById("serviceDetails");
+const detailsModal =
+document.getElementById("detailsModal");
 
-if (packageSelect && serviceDetailsBox) {
+const detailsModalBody =
+document.getElementById("detailsModalBody");
+
+const closeDetailsModal =
+document.getElementById("closeDetailsModal");
+
+if (
+    packageSelect &&
+    detailsModal &&
+    detailsModalBody
+) {
 
     packageSelect.addEventListener("change", () => {
 
@@ -267,14 +277,30 @@ if (packageSelect && serviceDetailsBox) {
 
         if (serviceDetails[selectedService]) {
 
-            serviceDetailsBox.style.display = "block";
+            detailsModal.classList.add("active");
 
-            serviceDetailsBox.innerHTML =
+            detailsModalBody.innerHTML =
             serviceDetails[selectedService];
 
-        } else {
+        }
 
-            serviceDetailsBox.style.display = "none";
+    });
+
+}
+
+if (closeDetailsModal && detailsModal) {
+
+    closeDetailsModal.addEventListener("click", () => {
+
+        detailsModal.classList.remove("active");
+
+    });
+
+    detailsModal.addEventListener("click", (e) => {
+
+        if (e.target === detailsModal) {
+
+            detailsModal.classList.remove("active");
 
         }
 
