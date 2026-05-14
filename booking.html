@@ -176,16 +176,32 @@
                             
                             </div>
 
-                            <div class="form-group" style="margin: 0;">
-                                <label>Preferred Time</label>
-                            
+                            <div class="grid-2" style="gap: 1.5rem; margin-bottom: 1.5rem;">
+
+                        <div class="form-group">
+                    
+                            <label>Preferred Date</label>
+                    
+                            <input type="date"
+                               id="preferredDate"
+                               name="preferredDate"
+                               class="form-control"
+                               required>
+                    
+                        </div>
+                    
+                        <div class="form-group">
+                    
+                            <label>Preferred Time</label>
+                    
                                 <select name="timeSlot"
-                                        class="form-control">
-                            
+                                        class="form-control"
+                                        required>
+                        
                                     <option value="">
                                         Select Time
                                     </option>
-                            
+                        
                                     <option>8:00 AM</option>
                                     <option>9:00 AM</option>
                                     <option>10:00 AM</option>
@@ -193,9 +209,11 @@
                                     <option>1:00 PM</option>
                                     <option>2:00 PM</option>
                                     <option>3:00 PM</option>
-                            
+                        
                                 </select>
+                        
                             </div>
+                        
                         </div>
 
                         <button type="submit" class="btn btn-primary appointment-btn">
