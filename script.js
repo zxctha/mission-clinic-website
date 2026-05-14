@@ -150,28 +150,42 @@ laboratory: [
 
 const serviceDetails = {
 
-    "Blood Chem Basic — ₱1,250":
-`
-✔ Includes:
-• FBS
-• Uric Acid
-• Lipid Profile
-
-⚠ 8-hour fasting required
-`,
-
-    "Blood Chem Plus — ₱1,400":
+"Blood Chem Advanced — ₱1,550":
 `
 ✔ Includes:
 • FBS
 • Uric Acid
 • Lipid Profile
 • CBC with Platelet
+• SGPT
+• Creatinine
 
-⚠ 8-hour fasting required
+⚠ Preparation Instructions:
+Please fast for 8-10 hours before your test.
+
+✓ Water is allowed
+✓ Avoid coffee and soft drinks
 `,
 
-    "Pregnant Package Basic — ₱650":
+"Blood Chem Executive — ₱1,750":
+`
+✔ Includes:
+• FBS
+• Uric Acid
+• Lipid Profile
+• CBC with Platelet
+• SGPT
+• Creatinine
+• ECG
+
+⚠ Preparation Instructions:
+Please fast for 8-10 hours before your test.
+
+✓ Water is allowed
+✓ Avoid coffee and soft drinks
+`,
+
+"Pregnant Package Plus — ₱1,250":
 `
 ✔ Includes:
 • CBC with Platelet
@@ -179,9 +193,26 @@ const serviceDetails = {
 • Blood Typing
 • RPR/VDRL
 • HBsAG
-`
+• HIV
 
-};
+⚠ Preparation Instructions:
+Drink plenty of water before ultrasound.
+`,
+
+"Pregnant Package Complete — ₱2,450":
+`
+✔ Includes:
+• CBC with Platelet
+• Urinalysis
+• Blood Typing
+• RPR/VDRL
+• HBsAG
+• HIV
+• Pregnant Ultrasound
+
+⚠ Preparation Instructions:
+Drink plenty of water before ultrasound.
+`
 
 
 
