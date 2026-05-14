@@ -1577,3 +1577,25 @@ linear-gradient(
         transform: scale(1);
     }
 }
+
+
+.service-details {
+
+    margin-top: 1rem;
+
+    padding: 1rem;
+
+    border-radius: 16px;
+
+    background: #f8fafc;
+
+    border: 1px solid #e2e8f0;
+
+    font-size: 0.95rem;
+
+    line-height: 1.7;
+
+    color: #334155;
+
+    display: none;
+}
