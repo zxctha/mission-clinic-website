@@ -34,3 +34,36 @@ window.addEventListener('DOMContentLoaded', () => {
 
 // LUCIDE ICONS
 lucide.createIcons();
+
+
+// IMAGE LIGHTBOX
+
+const galleryImages = document.querySelectorAll(".gallery-image");
+
+const imageLightbox = document.getElementById("imageLightbox");
+const lightboxImage = document.getElementById("lightboxImage");
+const lightboxClose = document.getElementById("lightboxClose");
+
+galleryImages.forEach(image => {
+
+    image.addEventListener("click", () => {
+
+        imageLightbox.classList.add("active");
+
+        lightboxImage.src = image.src;
+
+    });
+
+});
+
+lightboxClose.addEventListener("click", () => {
+    imageLightbox.classList.remove("active");
+});
+
+imageLightbox.addEventListener("click", (e) => {
+
+    if (e.target === imageLightbox) {
+        imageLightbox.classList.remove("active");
+    }
+
+});
