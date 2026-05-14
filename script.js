@@ -213,7 +213,7 @@ Drink plenty of water before ultrasound.
 ⚠ Preparation Instructions:
 Drink plenty of water before ultrasound.
 `
-
+};
 
 
 // DYNAMIC SERVICE DROPDOWN
