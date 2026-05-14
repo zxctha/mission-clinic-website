@@ -96,6 +96,13 @@ laboratory: [
     "PP2 — ₱1,250",
     "PP3 — ₱2,450",
 
+    // PREGNANT PACKAGES
+    "EP 1 — ₱3,350",
+    "EP 2 — ₱3,850",
+    "EP 3 — ₱4,850",
+    "EP 4 — ₱5,050",
+
+
     // INDIVIDUAL TESTS
     "CBC / Platelet Count",
     "Blood Typing",
@@ -502,6 +509,216 @@ const serviceDetails = {
 
 `,
 
+
+
+"EP 1 — ₱3,350": `
+
+<div class="detail-section">
+
+    <h4>📦 Package Includes</h4>
+
+    <ul>
+        <li>FBS</li>
+        <li>Uric Acid</li>
+        <li>Lipid Profile</li>
+        <li>Cholesterol</li>
+        <li>Triglycerides</li>
+        <li>HDL/LDL</li>
+        <li>SGPT</li>
+        <li>SGOT</li>
+        <li>Creatinine</li>
+        <li>BUN</li>
+        <li>CBC with Platelet</li>
+        <li>HBA1C</li>
+        <li>12-Lead ECG</li>
+        <li>Doctor's Consultation</li>
+        <li>FREE Urinalysis</li>
+    </ul>
+
+</div>
+
+<div class="detail-section warning">
+
+    <h4>⚠ Preparation Reminder</h4>
+
+    <ul>
+        <li>Do not eat or drink anything prior to blood extraction.</li>
+        <li>Strictly morning blood extraction.</li>
+        <li>Water is allowed during fasting.</li>
+        <li>Avoid coffee and soft drinks.</li>
+    </ul>
+
+</div>
+
+<div class="detail-section result">
+
+    <h4>🕒 Estimated Result</h4>
+
+    <p>
+        Results available within the day.
+    </p>
+
+</div>
+`,
+
+"EP 2 — ₱3,850": `
+
+<div class="detail-section">
+
+    <h4>📦 Package Includes</h4>
+
+    <ul>
+        <li>FBS</li>
+        <li>Uric Acid</li>
+        <li>Lipid Profile</li>
+        <li>Cholesterol</li>
+        <li>Triglycerides</li>
+        <li>HDL/LDL</li>
+        <li>SGPT</li>
+        <li>SGOT</li>
+        <li>Creatinine</li>
+        <li>BUN</li>
+        <li>CBC with Platelet</li>
+        <li>HBA1C</li>
+        <li>Sodium</li>
+        <li>Potassium</li>
+        <li>Calcium</li>
+        <li>12-Lead ECG</li>
+        <li>Doctor's Consultation</li>
+        <li>FREE Urinalysis</li>
+    </ul>
+
+</div>
+
+<div class="detail-section warning">
+
+    <h4>⚠ Preparation Reminder</h4>
+
+    <ul>
+        <li>Do not eat or drink anything prior to blood extraction.</li>
+        <li>Strictly morning blood extraction.</li>
+        <li>Water is allowed during fasting.</li>
+        <li>Avoid coffee and soft drinks.</li>
+    </ul>
+
+</div>
+
+<div class="detail-section result">
+
+    <h4>🕒 Estimated Result</h4>
+
+    <p>
+        Results available within the day.
+    </p>
+
+</div>
+`,
+
+
+
+"EP 3 — ₱4,850": `
+
+<div class="detail-section">
+
+    <h4>📦 Package Includes</h4>
+
+    <ul>
+        <li>FBS</li>
+        <li>Uric Acid</li>
+        <li>Lipid Profile</li>
+        <li>Cholesterol</li>
+        <li>Triglycerides</li>
+        <li>HDL/LDL</li>
+        <li>SGPT</li>
+        <li>SGOT</li>
+        <li>CBC with Platelet</li>
+        <li>Creatinine</li>
+        <li>HBA1C</li>
+        <li>12-Lead ECG</li>
+        <li>Whole Abdomen</li>
+        <li>Ultrasound</li>
+        <li>Doctor's Consultation</li>
+        <li>FREE Urinalysis</li>
+    </ul>
+
+</div>
+
+<div class="detail-section warning">
+
+    <h4>⚠ Preparation Reminder</h4>
+
+    <ul>
+        <li>Do not eat or drink anything prior to blood extraction.</li>
+        <li>Strictly morning blood extraction.</li>
+        <li>Water is allowed during fasting.</li>
+        <li>Avoid coffee and soft drinks.</li>
+    </ul>
+
+</div>
+
+<div class="detail-section result">
+
+    <h4>🕒 Estimated Result</h4>
+
+    <p>
+        Results available within the day.
+    </p>
+
+</div>
+`,
+
+
+ "EP 4 — ₱5,050": `
+
+<div class="detail-section">
+
+    <h4>📦 Package Includes</h4>
+
+    <ul>
+        <li>FBS</li>
+        <li>Uric Acid</li>
+        <li>Lipid Profile</li>
+        <li>SGPT</li>
+        <li>SGOT</li>
+        <li>Creatinine</li>
+        <li>BUN</li>
+        <li>CBC with Platelet</li>
+        <li>Sodium</li>
+        <li>Potassium</li>
+        <li>Calcium</li>
+        <li>HBA1C</li>
+        <li>12-Lead ECG</li>
+        <li>Whole Abdomen</li>
+        <li>Ultrasound</li>
+        <li>Doctor's Consultation</li>
+        <li>FREE Urinalysis</li>
+    </ul>
+
+</div>
+
+<div class="detail-section warning">
+
+    <h4>⚠ Preparation Reminder</h4>
+
+    <ul>
+        <li>Do not eat or drink anything prior to blood extraction.</li>
+        <li>Strictly morning blood extraction.</li>
+        <li>Water is allowed during fasting.</li>
+        <li>Avoid coffee and soft drinks.</li>
+    </ul>
+
+</div>
+
+<div class="detail-section result">
+
+    <h4>🕒 Estimated Result</h4>
+
+    <p>
+        Results available within the day.
+    </p>
+
+</div>
+`,   
 
 
 };
