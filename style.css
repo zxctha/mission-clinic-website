@@ -1378,16 +1378,27 @@ linear-gradient(
 }
 
 .mobile-menu-btn {
-    display: none;
     align-items: center;
     justify-content: center;
+
     width: 48px;
     height: 48px;
+
     border-radius: 12px;
+
     cursor: pointer;
+
     z-index: 2000;
     position: relative;
+
     flex-shrink: 0;
+
+    background: white;
+    color: var(--clinic-blue);
+
+    border: none;
+
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
 /* SOCIAL LINK */
