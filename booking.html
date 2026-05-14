@@ -121,22 +121,54 @@
 
                         <div class="grid-2" style="gap: 1.5rem; margin-bottom: 1.5rem;">
                             <div class="form-group" style="margin: 0;">
-                                <label>Service Needed</label>
-                                <select name="service" class="form-control">
-                                    <option>Annual Physical Exam</option>
-                                    <option>Pre-Employment Package</option>
-                                    <option>Ultrasound / 2D Echo</option>
-                                    <option>Laboratory Tests</option>
-                                    <option>Home Service</option>
-                                    <option>Internal Medicine</option>
-                                    <option>Ob Gyne</option>
-                                    <option>General Practitioner</option>
-                                    <option>Pediatrician</option>
-                                    <option>Occupational Medicine</option>
-                                    <option>Family & Community Medicine</option>
-                                    <option>Pain Specialist</option>
-                                    <option>Palliative Medicine</option>
+
+                                <label>Service Category</label>
+                            
+                                <select id="serviceCategory"
+                                        class="form-control">
+                            
+                                    <option value="">
+                                        Select Category
+                                    </option>
+                            
+                                    <option value="laboratory">
+                                        Laboratory Test
+                                    </option>
+                            
+                                    <option value="ultrasound">
+                                        Ultrasound
+                                    </option>
+                            
+                                    <option value="obgyn">
+                                        OB-GYN
+                                    </option>
+                            
+                                    <option value="preemployment">
+                                        Pre-Employment
+                                    </option>
+                            
+                                    <option value="vaccination">
+                                        Vaccination
+                                    </option>
+                            
                                 </select>
+                            
+                            </div>
+                            
+                            <div class="form-group" style="margin: 0;">
+                            
+                                <label>Select Package</label>
+                            
+                                <select id="servicePackage"
+                                        name="service"
+                                        class="form-control">
+                            
+                                    <option value="">
+                                        Select Package
+                                    </option>
+                            
+                                </select>
+                            
                             </div>
 
                             <div class="form-group" style="margin: 0;">
