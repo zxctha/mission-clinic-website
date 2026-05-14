@@ -83,16 +83,45 @@ if (galleryImages.length &&
 
 const services = {
 
-    laboratory: [
-        "Blood Chem Package 1 (Basic) — ₱1,250",
-        "Blood Chem Package 2 (With CBC) — ₱1,400",
-        "Blood Chem Package 3 (Advanced) — ₱1,550",
-        "Blood Chem Package 4 (Executive) — ₱1,750",
+laboratory: [
 
-        "Pregnant Package 1 (CBC + Urinalysis) — ₱650",
-        "Pregnant Package 2 (With HIV Screening) — ₱1,250",
-        "Pregnant Package 3 (With Ultrasound) — ₱2,450"
-    ],
+    // BLOOD CHEM PACKAGES
+    "Blood Chem Basic — ₱1,250",
+    "Blood Chem Plus — ₱1,400",
+    "Blood Chem Advanced — ₱1,550",
+    "Blood Chem Executive — ₱1,750",
+
+    // PREGNANT PACKAGES
+    "Pregnant Package Basic — ₱650",
+    "Pregnant Package Plus — ₱1,250",
+    "Pregnant Package Complete — ₱2,450",
+
+    // INDIVIDUAL TESTS
+    "CBC / Platelet Count",
+    "Blood Typing",
+    "ESR",
+    "Urinalysis",
+    "Fecalysis",
+    "Pregnancy Test Serum",
+    "Pregnancy Test Urine",
+
+    "Fasting Blood Sugar (FBS)",
+    "Creatinine",
+    "Uric Acid",
+    "SGPT (ALT)",
+    "SGOT (AST)",
+    "Lipid Profile",
+    "HBA1C",
+
+    "HIV Screening",
+    "HBsAG",
+    "VDRL / Syphilis",
+    "Dengue Duo",
+
+    "12-Lead ECG w/ Reading",
+    "Drug Testing"
+
+],
 
     ultrasound: [
         "Whole Abdomen",
