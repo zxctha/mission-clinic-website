@@ -95,10 +95,10 @@ const services = {
     ],
 
     ultrasound: [
-        "Whole Abdomen - ₱1,200",
-        "Upper / Lower Abdomen - ₱1,000",
-        "Pelvic / TAS - ₱500",
-        "Biophysical Scoring (BPS) - ₱900"
+        "Whole Abdomen",
+        "Upper / Lower Abdomen",
+        "Pelvic / TAS",
+        "Biophysical Scoring (BPS)"
     ],
 
     obgyn: [
