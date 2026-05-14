@@ -361,6 +361,12 @@ header.header-dark .nav-link.active {
     border: 1px solid var(--slate-200);
     font-size: 0.95rem;
     background: white;
+
+    word-break: break-word;
+}
+
+select.form-control {
+    cursor: pointer;
 }
 
 .form-control:focus {
@@ -1582,20 +1588,13 @@ linear-gradient(
 .service-details {
 
     margin-top: 1rem;
-
     padding: 1rem;
-
     border-radius: 16px;
-
     background: #f8fafc;
-
     border: 1px solid #e2e8f0;
-
     font-size: 0.95rem;
-
     line-height: 1.7;
-
     color: #334155;
-
     display: none;
+    white-space: pre-line;
 }
