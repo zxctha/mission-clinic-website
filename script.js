@@ -83,7 +83,7 @@ if (galleryImages.length &&
 
 const services = {
 
-laboratory: [
+Packages: [
 
     // BLOOD CHEM PACKAGES
     "BCP 1 — ₱1,250",
