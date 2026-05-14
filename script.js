@@ -124,7 +124,7 @@ Packages: [
     vaccination: [
         "Hepa B Vaccine",
         "Flu Vaccine"
-    ]
+    ],
 
     OTHERS: [
 
