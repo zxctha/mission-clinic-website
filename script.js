@@ -86,10 +86,10 @@ const services = {
 laboratory: [
 
     // BLOOD CHEM PACKAGES
-    "Blood Chem Basic — ₱1,250",
-    "Blood Chem Plus — ₱1,400",
-    "Blood Chem Advanced — ₱1,550",
-    "Blood Chem Executive — ₱1,750",
+    "BCP 1 — ₱1,250",
+    "BCP 2 — ₱1,400",
+    "BCP 3 — ₱1,550",
+    "BCP 4 — ₱1,750",
 
     // PREGNANT PACKAGES
     "Pregnant Package Basic — ₱650",
@@ -150,7 +150,7 @@ laboratory: [
 
 const serviceDetails = {
 
-"Blood Chem Advanced — ₱1,550": `
+"BCP 1 — ₱1,250": `
 
 <div class="detail-section">
 
@@ -160,7 +160,9 @@ const serviceDetails = {
         <li>FBS</li>
         <li>Uric Acid</li>
         <li>Lipid Profile</li>
-        <li>CBC with Platelet</li>
+        <li>Cholesterol</li>
+        <li>Triglycerides</li>
+        <li>HDL/LDL</li>
         <li>SGPT</li>
         <li>Creatinine</li>
     </ul>
@@ -168,7 +170,59 @@ const serviceDetails = {
 </div>
 
 <div class="detail-section warning">
+    <h4>⚠ FREE URINALYSIS</h4>
+    <h4>⚠ Preparation Reminder</h4>
 
+    <p>
+        Do not eat or drink anything prior to blood collection.
+    </p>
+
+    <br>
+
+    <strong>
+        Strictly Morning Blood Extraction ❗❗
+    </strong>
+
+    <ul>
+        <li>Last meal: 8:00 PM</li>
+        <li>Time of extraction: 6:00 AM</li>
+    </ul>
+
+</div>
+
+<div class="detail-section result">
+
+    <h4>🕒 Estimated Result</h4>
+
+    <p>
+        Available within 1-2 hours.
+    </p>
+
+</div>
+`,
+
+"BCP 2 — ₱1,400": `
+
+<div class="detail-section">
+
+    <h4>📦 Package Includes</h4>
+
+    <ul>
+        <li>FBS</li>
+        <li>Uric Acid</li>
+        <li>Lipid Profile</li>
+        <li>Cholesterol</li>
+        <li>Triglycerides</li>
+        <li>HDL/LDL</li>
+        <li>SGPT</li>
+        <li>Creatinine</li>
+        <li>CBC W/ PLT</li>
+    </ul>
+
+</div>
+
+<div class="detail-section warning">
+    <h4>⚠ FREE URINALYSIS</h4>
     <h4>⚠ Preparation Reminder</h4>
 
     <p>
@@ -201,53 +255,118 @@ const serviceDetails = {
 
 
 
+
     
-"Blood Chem Executive — ₱1,750":
-`
-✔ Includes:
-• FBS
-• Uric Acid
-• Lipid Profile
-• CBC with Platelet
-• SGPT
-• Creatinine
-• ECG
 
-⚠ Preparation Instructions:
-Please fast for 8-10 hours before your test.
+"BCP 3 — ₱1,550": `
 
-✓ Water is allowed
-✓ Avoid coffee and soft drinks
+<div class="detail-section">
+
+    <h4>📦 Package Includes</h4>
+
+    <ul>
+        <li>FBS</li>
+        <li>Uric Acid</li>
+        <li>Lipid Profile</li>
+        <li>Cholesterol</li>
+        <li>Triglycerides</li>
+        <li>HDL/LDL</li>
+        <li>SGPT</li>
+        <li>Creatinine</li>
+        <li>BUN</li>
+        <li>SGOT</li>
+    </ul>
+
+</div>
+
+<div class="detail-section warning">
+    <h4>⚠ FREE URINALYSIS</h4>
+    <h4>⚠ Preparation Reminder</h4>
+
+    <p>
+        Do not eat or drink anything prior to blood collection.
+    </p>
+
+    <br>
+
+    <strong>
+        Strictly Morning Blood Extraction ❗❗
+    </strong>
+
+    <ul>
+        <li>Last meal: 8:00 PM</li>
+        <li>Time of extraction: 6:00 AM</li>
+    </ul>
+
+</div>
+
+<div class="detail-section result">
+
+    <h4>🕒 Estimated Result</h4>
+
+    <p>
+        Available within 1-2 hours.
+    </p>
+
+</div>
 `,
 
-"Pregnant Package Plus — ₱1,250":
-`
-✔ Includes:
-• CBC with Platelet
-• Urinalysis
-• Blood Typing
-• RPR/VDRL
-• HBsAG
-• HIV
 
-⚠ Preparation Instructions:
-Drink plenty of water before ultrasound.
+"BCP 4 — ₱1,750": `
+
+<div class="detail-section">
+
+    <h4>📦 Package Includes</h4>
+
+    <ul>
+        <li>FBS</li>
+        <li>Uric Acid</li>
+        <li>Lipid Profile</li>
+        <li>Cholesterol</li>
+        <li>Triglycerides</li>
+        <li>HDL/LDL</li>
+        <li>SGPT</li>
+        <li>Creatinine</li>
+        <li>BUN</li>
+        <li>SGOT</li>
+        <li>CBC W/ PLT</li>
+    </ul>
+
+</div>
+
+<div class="detail-section warning">
+    <h4>⚠ FREE URINALYSIS</h4>
+    <h4>⚠ Preparation Reminder</h4>
+
+    <p>
+        Do not eat or drink anything prior to blood collection.
+    </p>
+
+    <br>
+
+    <strong>
+        Strictly Morning Blood Extraction ❗❗
+    </strong>
+
+    <ul>
+        <li>Last meal: 8:00 PM</li>
+        <li>Time of extraction: 6:00 AM</li>
+    </ul>
+
+</div>
+
+<div class="detail-section result">
+
+    <h4>🕒 Estimated Result</h4>
+
+    <p>
+        Available within 1-2 hours.
+    </p>
+
+</div>
 `,
+    
 
-"Pregnant Package Complete — ₱2,450":
-`
-✔ Includes:
-• CBC with Platelet
-• Urinalysis
-• Blood Typing
-• RPR/VDRL
-• HBsAG
-• HIV
-• Pregnant Ultrasound
-
-⚠ Preparation Instructions:
-Drink plenty of water before ultrasound.
-`
 };
 
 
