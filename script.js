@@ -148,6 +148,43 @@ laboratory: [
 
 };
 
+const serviceDetails = {
+
+    "Blood Chem Basic — ₱1,250":
+`
+✔ Includes:
+• FBS
+• Uric Acid
+• Lipid Profile
+
+⚠ 8-hour fasting required
+`,
+
+    "Blood Chem Plus — ₱1,400":
+`
+✔ Includes:
+• FBS
+• Uric Acid
+• Lipid Profile
+• CBC with Platelet
+
+⚠ 8-hour fasting required
+`,
+
+    "Pregnant Package Basic — ₱650":
+`
+✔ Includes:
+• CBC with Platelet
+• Urinalysis
+• Blood Typing
+• RPR/VDRL
+• HBsAG
+`
+
+};
+
+
+
 // DYNAMIC SERVICE DROPDOWN
 
 const categorySelect =
@@ -180,6 +217,33 @@ if (categorySelect && packageSelect) {
                 packageSelect.appendChild(option);
 
             });
+
+        }
+
+    });
+
+}
+
+const serviceDetailsBox =
+document.getElementById("serviceDetails");
+
+if (packageSelect && serviceDetailsBox) {
+
+    packageSelect.addEventListener("change", () => {
+
+        const selectedService =
+        packageSelect.value;
+
+        if (serviceDetails[selectedService]) {
+
+            serviceDetailsBox.style.display = "block";
+
+            serviceDetailsBox.innerHTML =
+            serviceDetails[selectedService];
+
+        } else {
+
+            serviceDetailsBox.style.display = "none";
 
         }
 
