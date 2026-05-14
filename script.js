@@ -65,5 +65,47 @@ imageLightbox.addEventListener("click", (e) => {
     if (e.target === imageLightbox) {
         imageLightbox.classList.remove("active");
     }
-
+  
 });
+
+// SERVICES DATABASE
+
+const services = {
+
+    laboratory: [
+        "BCP 1 - ₱1,250",
+        "BCP 2 - ₱1,400",
+        "BCP 3 - ₱1,550",
+        "BCP 4 - ₱1,750",
+
+        "PP1 - ₱650",
+        "PP2 - ₱1,250",
+        "PP3 - ₱2,450"
+    ],
+
+    ultrasound: [
+        "Whole Abdomen - ₱1,200",
+        "Upper / Lower Abdomen - ₱1,000",
+        "Pelvic / TAS - ₱500",
+        "Biophysical Scoring (BPS) - ₱900"
+    ],
+
+    obgyn: [
+        "Pap Smear",
+        "Prenatal Check-up",
+        "Infertility Work-up"
+    ],
+
+    preemployment: [
+        "PE A - ₱450",
+        "PE B - ₱670"
+    ],
+
+    vaccination: [
+        "Hepa B Vaccine",
+        "Flu Vaccine"
+    ]
+
+};
+
+
