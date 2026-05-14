@@ -108,4 +108,41 @@ const services = {
 
 };
 
+// DYNAMIC SERVICE DROPDOWN
 
+const categorySelect =
+document.getElementById("serviceCategory");
+
+const packageSelect =
+document.getElementById("servicePackage");
+
+if (categorySelect && packageSelect) {
+
+    categorySelect.addEventListener("change", () => {
+
+        const selectedCategory =
+        categorySelect.value;
+
+        packageSelect.innerHTML =
+        '<option value="">Select Package</option>';
+
+        if (services[selectedCategory]) {
+
+            services[selectedCategory].forEach(service => {
+
+                const option =
+                document.createElement("option");
+
+                option.value = service;
+
+                option.textContent = service;
+
+                packageSelect.appendChild(option);
+
+            });
+
+        }
+
+    });
+
+}
