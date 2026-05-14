@@ -1390,22 +1390,6 @@ linear-gradient(
     flex-shrink: 0;
 }
 
-@media (max-width: 768px) {
-
-    .desktop-nav {
-        display: none;
-    }
-
-    .nav-actions {
-        display: none;
-    }
-
-    .mobile-menu-btn {
-        display: flex;
-    }
-
-}
-
 /* SOCIAL LINK */
 
 .social-link {
