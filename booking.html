@@ -278,15 +278,50 @@ document.getElementById("bookingForm").addEventListener("submit", function(e){
         this
     ).then(() => {
 
-        document.querySelector(".form-side").innerHTML = `
-            <div style="text-align:center; padding:2rem;">
-                <h2>✅ Appointment Sent!</h2>
-                <p>We will contact you shortly.</p>
-                <a href="index.html" class="btn btn-primary">Back to Home</a>
-            </div>
-        `;
+    fetch("https://script.google.com/macros/s/AKfycbxMwEpiOgugs48GSzzXE42hpfYKwXBJuV0hPmsfQUMBxuoZFqpJl_Egz9oq0XoGCFI/exec", {
 
-    }).catch((error) => {
+        method: "POST",
+
+        body: JSON.stringify({
+
+            fullName:
+                this.fullName.value,
+
+            email:
+                this.email.value,
+
+            mobile:
+                this.mobile.value,
+
+            category:
+                document.getElementById("serviceCategory").value,
+            
+            service:
+                document.getElementById("servicePackage").value,
+
+            preferredDate:
+                this.preferredDate.value,
+
+            timeSlot:
+                this.timeSlot.value
+
+        })
+
+    });
+
+    document.querySelector(".form-side").innerHTML = `
+        <div style="text-align:center; padding:2rem;">
+            <h2>✅ Appointment Sent!</h2>
+            <p>We will contact you shortly.</p>
+            <a href="index.html" class="btn btn-primary">
+                Back to Home
+            </a>
+        </div>
+    `;
+
+})
+        
+        .catch((error) => {
         console.error(error);
         alert("❌ Failed to send. Check template ID.");
         btn.innerHTML = "📅 Book Appointment Now";
