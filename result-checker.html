@@ -1,1 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Result Status Checker</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body class="bg-slate">
+
+    <section class="section-padding">
+
+        <div class="container">
+
+            <div class="booking-box"
+                 style="max-width:600px; margin:auto;">
+
+                <div class="form-side">
+
+                    <h2 style="
+                        color:var(--clinic-blue);
+                        margin-bottom:1rem;
+                    ">
+                        Check Laboratory Result Status
+                    </h2>
+
+                    <p style="
+                        color:var(--slate-500);
+                        margin-bottom:2rem;
+                    ">
+                        Enter your reference number below.
+                    </p>
+
+                    <div class="form-group">
+
+                        <label>Reference Number</label>
+
+                        <input type="text"
+                               id="referenceInput"
+                               class="form-control"
+                               placeholder="ML-177918089858">
+
+                    </div>
+
+                    <button id="checkStatusBtn"
+                            class="btn btn-primary appointment-btn">
+
+                        Check Status
+
+                    </button>
+
+                    <div id="resultBox"
+                         style="margin-top:2rem;">
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <script>
+
+    document.getElementById("checkStatusBtn")
+    .addEventListener("click", () => {
+
+        const reference =
+            document.getElementById("referenceInput").value;
+
+        fetch("YOUR_WEB_APP_URL?reference=" + reference)
+
+        .then(response => response.json())
+
+        .then(data => {
+
+            const resultBox =
+                document.getElementById("resultBox");
+
+            if (data.found) {
+
+                resultBox.innerHTML = `
+
+                    <div style="
+                        background:#f8fafc;
+                        border-radius:20px;
+                        padding:2rem;
+                        border:1px solid #cbd5e1;
+                    ">
+
+                        <h3 style="
+                            color:#2563eb;
+                            margin-bottom:1rem;
+                        ">
+                            ${data.name}
+                        </h3>
+
+                        <p>
+                            <strong>Service:</strong>
+                            ${data.service}
+                        </p>
+
+                        <p>
+                            <strong>Status:</strong>
+                            ${data.status}
+                        </p>
+
+                    </div>
+
+                `;
+
+            } else {
+
+                resultBox.innerHTML = `
+
+                    <div style="
+                        background:#fef2f2;
+                        color:#dc2626;
+                        padding:1rem;
+                        border-radius:16px;
+                    ">
+
+                        ❌ Reference number not found.
+
+                    </div>
+
+                `;
+
+            }
+
+        });
+
+    });
+
+    </script>
+
+</body>
+
+</html>
