@@ -280,43 +280,85 @@ document.getElementById("bookingForm").addEventListener("submit", function(e){
 
     fetch("https://script.google.com/macros/s/AKfycbxMwEpiOgugs48GSzzXE42hpfYKwXBJuV0hPmsfQUMBxuoZFqpJl_Egz9oq0XoGCFI/exec", {
 
-        method: "POST",
+    method: "POST",
 
-        body: JSON.stringify({
+    body: JSON.stringify({
 
-            fullName:
-                this.fullName.value,
+        fullName:
+            this.fullName.value,
 
-            email:
-                this.email.value,
+        email:
+            this.email.value,
 
-            mobile:
-                this.mobile.value,
+        mobile:
+            this.mobile.value,
 
-            category:
-                document.getElementById("serviceCategory").value,
-            
-            service:
-                document.getElementById("servicePackage").value,
+        category:
+            document.getElementById("serviceCategory").value,
 
-            preferredDate:
-                this.preferredDate.value,
+        service:
+            document.getElementById("servicePackage").value,
 
-            timeSlot:
-                this.timeSlot.value
+        preferredDate:
+            this.preferredDate.value,
 
-        })
+        timeSlot:
+            this.timeSlot.value
 
-    });
+    })
+
+})
+.then(response => response.json())
+
+.then(data => {
 
     document.querySelector(".form-side").innerHTML = `
+
         <div style="text-align:center; padding:2rem;">
-            <h2>✅ Appointment Sent!</h2>
-            <p>We will contact you shortly.</p>
-            <a href="index.html" class="btn btn-primary">
-                Back to Home
+
+            <h2>✅ Appointment Submitted!</h2>
+
+            <p style="margin-top:1rem;">
+                Your booking request has been received.
+            </p>
+
+            <div style="
+                background:#f8fafc;
+                border:2px dashed #2563eb;
+                padding:1rem;
+                border-radius:16px;
+                margin:2rem 0;
+            ">
+
+                <p style="margin-bottom:0.5rem;">
+                    Reference Number
+                </p>
+
+                <h1 style="
+                    color:#2563eb;
+                    font-size:1.5rem;
+                    margin:0;
+                ">
+                    ${data.referenceNumber}
+                </h1>
+
+            </div>
+
+            <p style="font-size:0.9rem; color:#64748b;">
+                Please save this reference number
+                for result tracking.
+            </p>
+
+            <a href="index.html"
+               class="btn btn-primary"
+               style="margin-top:2rem;">
+
+               Back to Home
+
             </a>
+
         </div>
+
     `;
 
 })
