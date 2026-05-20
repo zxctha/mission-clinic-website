@@ -148,12 +148,30 @@ fetch("https://script.google.com/macros/s/AKfycbxMwEpiOgugs48GSzzXE42hpfYKwXBJuV
                             font-weight:bold;
                             color:#16a34a;
                         ">
-                            ✅ Status: ${data.status}
+                          ✅ Status: ${data.status}
                         </p>
-                    
-                    </div>
-                    
-                    `;
+                        
+                        ${data.resultLink ? `
+                        <a href="${data.resultLink}"
+                           target="_blank"
+                           style="
+                              display:block;
+                              margin-top:1.5rem;
+                              background:#2563eb;
+                              color:white;
+                              padding:1rem;
+                              border-radius:16px;
+                              text-align:center;
+                              text-decoration:none;
+                              font-weight:bold;
+                           ">
+                           📄 Download Laboratory Result
+                        </a>
+                        ` : ""}
+                        
+                        </div>
+                        
+                        `;
             } else {
 
                 resultBox.innerHTML = `
@@ -179,6 +197,7 @@ fetch("https://script.google.com/macros/s/AKfycbxMwEpiOgugs48GSzzXE42hpfYKwXBJuV
 
     </script>
 
+    
 </body>
 
 </html>
