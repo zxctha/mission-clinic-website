@@ -47,18 +47,10 @@
             <!-- BOOKING FORM -->
             <section class="section-padding">
                 <div class="container">
-                    <div style="
-                        max-width:500px;
-                        margin:auto;
-                        background:white;
-                        padding:3rem;
-                        border-radius:32px;
-                        box-shadow:0 10px 30px rgba(0,0,0,0.08);
-                    ">
+                <div class="booking-box">
 
                 <!-- FORM SIDE -->
-               <div class="form-side"
-                     style="width:100%;">
+                <div class="form-side">
                     <h2 style="margin-bottom:0.5rem; color: var(--clinic-blue);">
                         Appointment Details
                     </h2>
@@ -94,8 +86,10 @@
                                 <label>Service Category</label>
                             
                                 <select id="serviceCategory"
-                                    name="category"
-                                    class="form-control">
+                                        name="category"
+                                        class="form-control"
+                                        style="width:100%;">
+                                    
                             
                                     <option value="">
                                         Select Category
@@ -131,14 +125,15 @@
                             
                             <div class="form-group" style="margin: 0;">
                             
-                                <label>Select Package</label>
+                                <label>Choose Service</label>
                             
                                 <select id="servicePackage"
                                         name="service"
-                                        class="form-control">
+                                        class="form-control"
+                                        style="width:100%;">
                                 
                                     <option value="">
-                                        Select Package
+                                        Choose Service
                                     </option>
                                 
                                 </select>
