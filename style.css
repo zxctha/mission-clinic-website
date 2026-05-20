@@ -454,7 +454,7 @@ select.form-control {
 /* BOOKING LAYOUT FIX */
 .booking-box {
     display: grid;
-    grid-template-columns: 0.95fr 1.35fr;
+    grid-template-columns: 0.75fr 1.6fr;
     background: white;
     border-radius: 2.5rem;
     overflow: hidden;
