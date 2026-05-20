@@ -283,41 +283,49 @@ document.getElementById("bookingForm").addEventListener("submit", function(e){
     btn.disabled = true;
 
     emailjs.sendForm(
-        "service_zs1jkqj",
-        "template_imko2br", // 🔥 PALITAN MO
-        this
-    ).then(() => {
+    "service_zs1jkqj",
+    "template_imko2br",
+    this
+)
 
-    fetch("https://script.google.com/macros/s/AKfycbxMwEpiOgugs48GSzzXE42hpfYKwXBJuV0hPmsfQUMBxuoZFqpJl_Egz9oq0XoGCFI/exec", {
+.then(() => {
 
-    method: "POST",
+    return fetch(
+        "https://script.google.com/macros/s/AKfycbxMwEpiOgugs48GSzzXE42hpfYKwXBJuV0hPmsfQUMBxuoZFqpJl_Egz9oq0XoGCFI/exec",
+        {
 
-    body: JSON.stringify({
+            method: "POST",
 
-        fullName:
-            this.fullName.value,
+            body: JSON.stringify({
 
-        email:
-            this.email.value,
+                fullName:
+                    this.fullName.value,
 
-        mobile:
-            this.mobile.value,
+                email:
+                    this.email.value,
 
-        category:
-            document.getElementById("serviceCategory").value,
+                mobile:
+                    this.mobile.value,
 
-        service:
-            document.getElementById("servicePackage").value,
+                category:
+                    document.getElementById("serviceCategory").value,
 
-        preferredDate:
-            this.preferredDate.value,
+                service:
+                    document.getElementById("servicePackage").value,
 
-        timeSlot:
-            this.timeSlot.value
+                preferredDate:
+                    this.preferredDate.value,
 
-    })
+                timeSlot:
+                    this.timeSlot.value
+
+            })
+
+        }
+    );
 
 })
+
 .then(response => response.json())
 
 .then(data => {
