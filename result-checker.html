@@ -14,16 +14,35 @@
 
 </head>
 
-<body class="bg-slate">
+<body class="bg-slate"
+      style="
+        min-height:100vh;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+      ">
 
     <section class="section-padding">
 
-        <div class="container">
+        <div style="
+            width:100%;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+        ">
 
-            <div class="booking-box"
-                 style="max-width:600px; margin:auto;">
+                <div style="
+                    width:100%;
+                    max-width:500px;
+                    background:white;
+                    padding:3rem;
+                    border-radius:32px;
+                    box-shadow:0 10px 30px rgba(0,0,0,0.08);
+                ">
 
-                <div class="form-side">
+                <div style="
+                        width:100%;
+                    ">
 
                     <h2 style="
                         color:var(--clinic-blue);
@@ -51,7 +70,8 @@
                     </div>
 
                     <button id="checkStatusBtn"
-                            class="btn btn-primary appointment-btn">
+                            class="btn btn-primary appointment-btn"
+                            style="width:100%;">
 
                         Check Status
 
@@ -75,10 +95,23 @@
     .addEventListener("click", () => {
 
         const reference =
-            document.getElementById("referenceInput").value;
+    document.getElementById("referenceInput").value;
 
-        fetch("https://script.google.com/macros/s/AKfycbxMwEpiOgugs48GSzzXE42hpfYKwXBJuV0hPmsfQUMBxuoZFqpJl_Egz9oq0XoGCFI/exec?reference=" + reference)
+const resultBox =
+    document.getElementById("resultBox");
 
+resultBox.innerHTML = `
+    <div style="
+        text-align:center;
+        color:#64748b;
+        margin-top:1rem;
+    ">
+        Checking status...
+    </div>
+`;
+
+fetch("https://script.google.com/macros/s/AKfycbxMwEpiOgugs48GSzzXE42hpfYKwXBJuV0hPmsfQUMBxuoZFqpJl_Egz9oq0XoGCFI/exec?reference=" + reference)
+    
         .then(response => response.json())
 
         .then(data => {
@@ -92,32 +125,35 @@
 
                     <div style="
                         background:#f8fafc;
-                        border-radius:20px;
+                        border-radius:24px;
                         padding:2rem;
                         border:1px solid #cbd5e1;
                     ">
-
+                    
                         <h3 style="
                             color:#2563eb;
                             margin-bottom:1rem;
+                            font-size:1.5rem;
                         ">
                             ${data.name}
                         </h3>
-
-                        <p>
+                    
+                        <p style="margin-bottom:0.5rem;">
                             <strong>Service:</strong>
                             ${data.service}
                         </p>
-
-                        <p>
-                            <strong>Status:</strong>
-                            ${data.status}
+                    
+                        <p style="
+                            margin-top:1rem;
+                            font-weight:bold;
+                            color:#16a34a;
+                        ">
+                            ✅ Status: ${data.status}
                         </p>
-
+                    
                     </div>
-
-                `;
-
+                    
+                    `;
             } else {
 
                 resultBox.innerHTML = `
