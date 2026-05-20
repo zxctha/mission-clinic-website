@@ -659,8 +659,7 @@ const serviceDetails = {
         <li>Creatinine</li>
         <li>HBA1C</li>
         <li>12-Lead ECG</li>
-        <li>Whole Abdomen</li>
-        <li>Ultrasound</li>
+        <li>Whole Abdomen Ultrasound</li>
         <li>Doctor's Consultation</li>
         <li>FREE Urinalysis</li>
     </ul>
