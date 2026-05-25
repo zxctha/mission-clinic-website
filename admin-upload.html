@@ -132,81 +132,68 @@
 
 </div>
 
-<script defer>
+<script>
 
-window.onload = () => {
+document
+.getElementById("uploadForm")
+.addEventListener("submit", async (e) => {
 
-    document
-    .getElementById("uploadForm")
-    .addEventListener("submit", (e) => {
+    e.preventDefault();
 
-        e.preventDefault();
+    const reference =
+        document.getElementById("referenceNumber").value;
 
-        const reference =
-            document.getElementById("referenceNumber").value;
+    const file =
+        document.getElementById("resultFile").files[0];
 
-        const file =
-            document.getElementById("resultFile").files[0];
+    const statusBox =
+        document.getElementById("uploadStatus");
 
-        const statusBox =
-            document.getElementById("uploadStatus");
+    statusBox.innerHTML =
+        "Uploading result...";
 
-        statusBox.innerHTML = `
-            <div style="
-                color:#64748b;
-            ">
-                Uploading result...
-            </div>
-        `;
+    const reader =
+        new FileReader();
 
-        const reader =
-            new FileReader();
+    reader.readAsDataURL(file);
 
-        reader.readAsDataURL(file);
+    reader.onload = async () => {
 
-        reader.onload = () => {
+        const base64File =
+            reader.result.split(",")[1];
 
-            const base64File =
-                reader.result.split(",")[1];
+        const payload = {
 
-            const form =
-                document.createElement("form");
+            action: "uploadResult",
 
-            form.method = "POST";
+            reference: reference,
 
-            form.action =
-                "https://script.google.com/macros/s/AKfycbxMwEpiOgugs48GSzzXE42hpfYKwXBJuV0hPmsfQUMBxuoZFqpJl_Egz9oq0XoGCFI/exec";
+            file: base64File,
 
-            form.target =
-                "hiddenFrame";
+            fileName: file.name
 
-            const payload = {
+        };
 
-                action: "uploadResult",
+        try {
 
-                reference: reference,
+            await fetch(
+                "https://script.google.com/macros/s/AKfycbxMwEpiOgugs48GSzzXE42hpfYKwXBJuV0hPmsfQUMBxuoZFqpJl_Egz9oq0XoGCFI/exec",
+                {
 
-                file: base64File,
+                    method: "POST",
 
-                fileName: file.name
+                    mode: "no-cors",
 
-            };
+                    headers: {
+                        "Content-Type":
+                        "text/plain"
+                    },
 
-            const input =
-                document.createElement("input");
+                    body:
+                        JSON.stringify(payload)
 
-            input.type = "hidden";
-
-            input.name = "data";
-
-            input.value =
-                JSON.stringify(payload);
-
-            form.appendChild(input);
-
-            document.body.appendChild(form);
-
-            form.submit();
+                }
+            );
 
             statusBox.innerHTML = `
                 <div style="
@@ -220,11 +207,27 @@ window.onload = () => {
                 </div>
             `;
 
-        };
+        } catch(error) {
 
-    });
+            statusBox.innerHTML = `
+                <div style="
+                    background:#fee2e2;
+                    color:#991b1b;
+                    padding:1rem;
+                    border-radius:16px;
+                    font-weight:bold;
+                ">
+                    ❌ Upload failed.
+                </div>
+            `;
 
-};
+            console.log(error);
+
+        }
+
+    };
+
+});
 
 </script>
 
