@@ -91,6 +91,117 @@
 
     </div>
 
+    
+<script>
+
+document
+.getElementById("uploadForm")
+.addEventListener("submit", async (e) => {
+
+    e.preventDefault();
+
+    const reference =
+        document.getElementById("referenceNumber").value;
+
+    const file =
+        document.getElementById("resultFile").files[0];
+
+    const statusBox =
+        document.getElementById("uploadStatus");
+
+    statusBox.innerHTML = `
+        <div style="
+            color:#64748b;
+            text-align:center;
+        ">
+            Uploading result...
+        </div>
+    `;
+
+    const reader = new FileReader();
+
+    reader.readAsDataURL(file);
+
+    reader.onload = async () => {
+
+        const base64File =
+            reader.result.split(",")[1];
+
+        const response = await fetch(
+            "https://script.google.com/macros/s/AKfycbxMwEpiOgugs48GSzzXE42hpfYKwXBJuV0hPmsfQUMBxuoZFqpJl_Egz9oq0XoGCFI/exec",
+            {
+
+                method: "POST",
+                
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                
+                body: JSON.stringify({
+
+                    action: "uploadResult",
+
+                    reference: reference,
+
+                    file: base64File,
+
+                    fileName: file.name
+
+                })
+
+            }
+        );
+
+        const data =
+            await response.json();
+
+        if (data.success) {
+
+            statusBox.innerHTML = `
+
+                <div style="
+                    background:#dcfce7;
+                    color:#166534;
+                    padding:1rem;
+                    border-radius:16px;
+                    text-align:center;
+                    font-weight:bold;
+                ">
+
+                    ✅ Laboratory result uploaded successfully.
+
+                </div>
+
+            `;
+
+        } else {
+
+            statusBox.innerHTML = `
+
+                <div style="
+                    background:#fef2f2;
+                    color:#dc2626;
+                    padding:1rem;
+                    border-radius:16px;
+                    text-align:center;
+                    font-weight:bold;
+                ">
+
+                    ❌ Upload failed.
+
+                </div>
+
+            `;
+
+        }
+
+    };
+
+});
+
+</script>
+
+    
 </body>
 
 </html>
