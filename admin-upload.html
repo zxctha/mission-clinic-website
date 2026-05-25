@@ -129,6 +129,23 @@ document
         
         console.log(base64File.length);
 
+const formData = new FormData();
+
+formData.append(
+    "data",
+    JSON.stringify({
+
+        action: "uploadResult",
+
+        reference: reference,
+
+        file: base64File,
+
+        fileName: file.name
+
+    })
+);
+
 await fetch(
     "https://script.google.com/macros/s/AKfycbxMwEpiOgugs48GSzzXE42hpfYKwXBJuV0hPmsfQUMBxuoZFqpJl_Egz9oq0XoGCFI/exec",
     {
@@ -137,21 +154,7 @@ await fetch(
 
         mode: "no-cors",
 
-        headers: {
-            "Content-Type": "text/plain;charset=utf-8"
-        },
-
-        body: JSON.stringify({
-
-            action: "uploadResult",
-
-            reference: reference,
-
-            file: base64File,
-
-            fileName: file.name
-
-        })
+        body: formData
 
     }
 );
