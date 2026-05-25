@@ -1,102 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-
-    <meta charset="UTF-8">
-
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
-
-    <title>Admin Upload Portal</title>
-
-    <link rel="stylesheet" href="style.css">
-
-</head>
-
-<body class="bg-slate"
-      style="
-        min-height:100vh;
-        display:flex;
-        align-items:center;
-        justify-content:center;
-      ">
-
-    <div style="
-        width:100%;
-        max-width:550px;
-        background:white;
-        padding:3rem;
-        border-radius:32px;
-        box-shadow:0 10px 30px rgba(0,0,0,0.08);
-    ">
-
-        <h2 style="
-            color:var(--clinic-blue);
-            margin-bottom:1rem;
-        ">
-            Upload Laboratory Result
-        </h2>
-
-        <p style="
-            color:var(--slate-500);
-            margin-bottom:2rem;
-        ">
-            Upload patient laboratory PDF result.
-        </p>
-
-        <form id="uploadForm">
-
-            <div class="form-group">
-
-                <label>Reference Number</label>
-
-                <input type="text"
-                       id="referenceNumber"
-                       class="form-control"
-                       placeholder="ML-177918089858"
-                       required>
-
-            </div>
-
-            <div class="form-group"
-                 style="margin-top:1.5rem;">
-
-                <label>Upload PDF Result</label>
-
-                <input type="file"
-                       id="resultFile"
-                       class="form-control"
-                       accept=".pdf"
-                       required>
-
-            </div>
-
-            <button type="submit"
-                    class="btn btn-primary appointment-btn"
-                    style="
-                        width:100%;
-                        margin-top:2rem;
-                    ">
-
-                📄 Upload Result
-
-            </button>
-
-        </form>
-
-        <div id="uploadStatus"
-             style="margin-top:2rem;">
-        </div>
-
-    </div>
-
-    
 <script>
 
 document
 .getElementById("uploadForm")
-.addEventListener("submit", async (e) => {
+.addEventListener("submit", (e) => {
 
     e.preventDefault();
 
@@ -122,64 +28,73 @@ document
 
     reader.readAsDataURL(file);
 
-    reader.onload = async () => {
+    reader.onload = () => {
 
         const base64File =
             reader.result.split(",")[1];
-        
-        console.log(base64File.length);
 
-const payload = {
+        const form =
+            document.createElement("form");
 
-    action: "uploadResult",
+        form.method = "POST";
 
-    reference: reference,
+        form.action =
+            "https://script.google.com/macros/s/AKfycbxMwEpiOgugs48GSzzXE42hpfYKwXBJuV0hPmsfQUMBxuoZFqpJl_Egz9oq0XoGCFI/exec";
 
-    file: base64File,
+        form.target = "hiddenFrame";
 
-    fileName: file.name
+        const payload = {
 
-};
+            action: "uploadResult",
 
-await fetch(
-    "https://script.google.com/macros/s/AKfycbxMwEpiOgugs48GSzzXE42hpfYKwXBJuV0hPmsfQUMBxuoZFqpJl_Egz9oq0XoGCFI/exec",
-    {
+            reference: reference,
 
-        method: "POST",
+            file: base64File,
 
+            fileName: file.name
 
-headers: {
-    "Content-Type": "application/json"
-},
+        };
 
-body: JSON.stringify(payload)
+        const input =
+            document.createElement("input");
 
-    }
-);
+        input.type = "hidden";
 
-statusBox.innerHTML = `
+        input.name = "data";
 
-    <div style="
-        background:#dcfce7;
-        color:#166534;
-        padding:1rem;
-        border-radius:16px;
-        text-align:center;
-        font-weight:bold;
-    ">
+        input.value =
+            JSON.stringify(payload);
 
-        ✅ Upload request sent successfully.
+        form.appendChild(input);
 
-    </div>
+        document.body.appendChild(form);
 
-`;
+        form.submit();
+
+        statusBox.innerHTML = `
+
+            <div style="
+                background:#dcfce7;
+                color:#166534;
+                padding:1rem;
+                border-radius:16px;
+                text-align:center;
+                font-weight:bold;
+            ">
+
+                ✅ Upload completed successfully.
+
+            </div>
+
+        `;
+
     };
 
 });
 
 </script>
 
-    
-</body>
-
-</html>
+<iframe
+    name="hiddenFrame"
+    style="display:none;">
+</iframe>
