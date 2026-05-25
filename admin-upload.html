@@ -174,56 +174,59 @@ document
 
         };
 
-        try {
+try {
 
-            await fetch(
-                "https://script.google.com/macros/s/AKfycbxfmEoufjIFr1IMGi4iUSvWWEUsUQ-lk7iJmvYttSzIpAoEOtnKpD7kCWovFWlqmBw/exec",
-                {
+    const response = await fetch(
+        "https://script.google.com/macros/s/AKfycbxfmEoufjIFr1IMGi4iUSvWWEUsUQ-lk7iJmvYttSzIpAoEOtnKpD7kCWovFWlqmBw/exec",
+        {
 
-                    method: "POST",
+            method: "POST",
 
-                    mode: "no-cors",
+            headers: {
+                "Content-Type":
+                "application/json"
+            },
 
-                    headers: {
-                        "Content-Type":
-                        "text/plain"
-                    },
-
-                    body:
-                        JSON.stringify(payload)
-
-                }
-            );
-
-            statusBox.innerHTML = `
-                <div style="
-                    background:#dcfce7;
-                    color:#166534;
-                    padding:1rem;
-                    border-radius:16px;
-                    font-weight:bold;
-                ">
-                    ✅ Upload completed successfully.
-                </div>
-            `;
-
-        } catch(error) {
-
-            statusBox.innerHTML = `
-                <div style="
-                    background:#fee2e2;
-                    color:#991b1b;
-                    padding:1rem;
-                    border-radius:16px;
-                    font-weight:bold;
-                ">
-                    ❌ Upload failed.
-                </div>
-            `;
-
-            console.log(error);
+            body:
+                JSON.stringify(payload)
 
         }
+    );
+
+    const result =
+        await response.text();
+
+    console.log(result);
+
+    statusBox.innerHTML = `
+        <div style="
+            background:#dcfce7;
+            color:#166534;
+            padding:1rem;
+            border-radius:16px;
+            font-weight:bold;
+        ">
+            ✅ Upload completed successfully.
+        </div>
+    `;
+
+} catch(error) {
+
+    console.log(error);
+
+    statusBox.innerHTML = `
+        <div style="
+            background:#fee2e2;
+            color:#991b1b;
+            padding:1rem;
+            border-radius:16px;
+            font-weight:bold;
+        ">
+            ❌ Upload failed.
+        </div>
+    `;
+
+}
 
     };
 
