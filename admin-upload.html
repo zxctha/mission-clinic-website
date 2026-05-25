@@ -135,10 +135,8 @@ const response = await fetch(
 
         method: "POST",
 
-        mode: "no-cors",
-        
         headers: {
-            "Content-Type": "text/plain;charset=utf-8"
+            "Content-Type": "application/json"
         },
 
         body: JSON.stringify({
@@ -167,12 +165,11 @@ statusBox.innerHTML = `
         font-weight:bold;
     ">
 
-        ✅ Upload request sent successfully.
+        ✅ Upload completed successfully.
 
     </div>
 
 `;
-
     };
 
 });
