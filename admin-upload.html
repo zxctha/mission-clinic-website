@@ -129,14 +129,16 @@ document
         
         console.log(base64File.length);
 
-const response = await fetch(
+await fetch(
     "https://script.google.com/macros/s/AKfycbxMwEpiOgugs48GSzzXE42hpfYKwXBJuV0hPmsfQUMBxuoZFqpJl_Egz9oq0XoGCFI/exec",
     {
 
         method: "POST",
 
+        mode: "no-cors",
+
         headers: {
-            "Content-Type": "application/json"
+            "Content-Type": "text/plain;charset=utf-8"
         },
 
         body: JSON.stringify({
@@ -165,7 +167,7 @@ statusBox.innerHTML = `
         font-weight:bold;
     ">
 
-        ✅ Upload completed successfully.
+        ✅ Upload request sent successfully.
 
     </div>
 
