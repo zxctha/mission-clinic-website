@@ -127,33 +127,36 @@ document
         const base64File =
             reader.result.split(",")[1];
 
-        const response = await fetch(
-            "https://script.google.com/macros/s/AKfycbxMwEpiOgugs48GSzzXE42hpfYKwXBJuV0hPmsfQUMBxuoZFqpJl_Egz9oq0XoGCFI/exec",
-            {
+const response = await fetch(
+    "https://script.google.com/macros/s/AKfycbxMwEpiOgugs48GSzzXE42hpfYKwXBJuV0hPmsfQUMBxuoZFqpJl_Egz9oq0XoGCFI/exec",
+    {
 
-                method: "POST",
-                
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                
-                body: JSON.stringify({
+        method: "POST",
 
-                    action: "uploadResult",
+        headers: {
+            "Content-Type": "text/plain;charset=utf-8"
+        },
 
-                    reference: reference,
+        body: JSON.stringify({
 
-                    file: base64File,
+            action: "uploadResult",
 
-                    fileName: file.name
+            reference: reference,
 
-                })
+            file: base64File,
 
-            }
-        );
+            fileName: file.name
 
-        const data =
-            await response.json();
+        })
+
+    }
+);
+
+const text =
+    await response.text();
+
+const data =
+    JSON.parse(text);
 
         if (data.success) {
 
