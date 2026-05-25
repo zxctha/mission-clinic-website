@@ -133,6 +133,8 @@ const response = await fetch(
 
         method: "POST",
 
+        mode: "no-cors",
+        
         headers: {
             "Content-Type": "text/plain;charset=utf-8"
         },
@@ -152,51 +154,22 @@ const response = await fetch(
     }
 );
 
-const text =
-    await response.text();
+statusBox.innerHTML = `
 
-const data =
-    JSON.parse(text);
+    <div style="
+        background:#dcfce7;
+        color:#166534;
+        padding:1rem;
+        border-radius:16px;
+        text-align:center;
+        font-weight:bold;
+    ">
 
-        if (data.success) {
+        ✅ Upload request sent successfully.
 
-            statusBox.innerHTML = `
+    </div>
 
-                <div style="
-                    background:#dcfce7;
-                    color:#166534;
-                    padding:1rem;
-                    border-radius:16px;
-                    text-align:center;
-                    font-weight:bold;
-                ">
-
-                    ✅ Laboratory result uploaded successfully.
-
-                </div>
-
-            `;
-
-        } else {
-
-            statusBox.innerHTML = `
-
-                <div style="
-                    background:#fef2f2;
-                    color:#dc2626;
-                    padding:1rem;
-                    border-radius:16px;
-                    text-align:center;
-                    font-weight:bold;
-                ">
-
-                    ❌ Upload failed.
-
-                </div>
-
-            `;
-
-        }
+`;
 
     };
 
