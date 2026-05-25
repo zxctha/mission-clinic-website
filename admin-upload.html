@@ -1,96 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Upload Portal</title>
+
+    <style>
+
+        body{
+            margin:0;
+            font-family:Arial, sans-serif;
+            background:#f1f5f9;
+            min-height:100vh;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+        }
+
+        .card{
+            width:100%;
+            max-width:550px;
+            background:white;
+            padding:3rem;
+            border-radius:32px;
+            box-shadow:0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        h2{
+            color:#0057b8;
+            margin-bottom:1rem;
+        }
+
+        p{
+            color:#64748b;
+            margin-bottom:2rem;
+        }
+
+        label{
+            display:block;
+            margin-bottom:.5rem;
+            font-weight:bold;
+        }
+
+        input{
+            width:100%;
+            padding:14px;
+            border-radius:14px;
+            border:1px solid #cbd5e1;
+            box-sizing:border-box;
+        }
+
+        .group{
+            margin-bottom:1.5rem;
+        }
+
+        button{
+            width:100%;
+            padding:18px;
+            border:none;
+            border-radius:999px;
+            background:#f4d64e;
+            font-weight:bold;
+            cursor:pointer;
+            font-size:16px;
+            box-shadow:0 5px 15px rgba(0,0,0,0.15);
+        }
+
+        #uploadStatus{
+            margin-top:2rem;
+            text-align:center;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="card">
+
+    <h2>
+        Upload Laboratory Result
+    </h2>
+
+    <p>
+        Upload patient laboratory PDF result.
+    </p>
+
+    <form id="uploadForm">
+
+        <div class="group">
+
+            <label>
+                Reference Number
+            </label>
+
+            <input
+                type="text"
+                id="referenceNumber"
+                placeholder="ML-177918089858"
+                required>
+
+        </div>
+
+        <div class="group">
+
+            <label>
+                Upload PDF Result
+            </label>
+
+            <input
+                type="file"
+                id="resultFile"
+                accept=".pdf"
+                required>
+
+        </div>
+
+        <button type="submit">
+            📄 Upload Result
+        </button>
+
+    </form>
+
+    <div id="uploadStatus"></div>
+
+</div>
+
 <script defer>
 
-document
-.getElementById("uploadForm")
-.addEventListener("submit", (e) => {
+window.onload = () => {
 
-    e.preventDefault();
+    document
+    .getElementById("uploadForm")
+    .addEventListener("submit", (e) => {
 
-    const reference =
-        document.getElementById("referenceNumber").value;
+        e.preventDefault();
 
-    const file =
-        document.getElementById("resultFile").files[0];
+        const reference =
+            document.getElementById("referenceNumber").value;
 
-    const statusBox =
-        document.getElementById("uploadStatus");
+        const file =
+            document.getElementById("resultFile").files[0];
 
-    statusBox.innerHTML = `
-        <div style="
-            color:#64748b;
-            text-align:center;
-        ">
-            Uploading result...
-        </div>
-    `;
+        const statusBox =
+            document.getElementById("uploadStatus");
 
-    const reader = new FileReader();
+        statusBox.innerHTML = `
+            <div style="
+                color:#64748b;
+            ">
+                Uploading result...
+            </div>
+        `;
 
-    reader.readAsDataURL(file);
+        const reader =
+            new FileReader();
 
-    reader.onload = () => {
+        reader.readAsDataURL(file);
 
-        const base64File =
-            reader.result.split(",")[1];
+        reader.onload = () => {
 
-        const form =
-            document.createElement("form");
+            const base64File =
+                reader.result.split(",")[1];
 
-        form.method = "POST";
+            const form =
+                document.createElement("form");
 
-        form.action =
-            "https://script.google.com/macros/s/AKfycbxMwEpiOgugs48GSzzXE42hpfYKwXBJuV0hPmsfQUMBxuoZFqpJl_Egz9oq0XoGCFI/exec";
+            form.method = "POST";
 
-        form.target = "hiddenFrame";
+            form.action =
+                "https://script.google.com/macros/s/AKfycbxMwEpiOgugs48GSzzXE42hpfYKwXBJuV0hPmsfQUMBxuoZFqpJl_Egz9oq0XoGCFI/exec";
 
-        const payload = {
+            form.target =
+                "hiddenFrame";
 
-            action: "uploadResult",
+            const payload = {
 
-            reference: reference,
+                action: "uploadResult",
 
-            file: base64File,
+                reference: reference,
 
-            fileName: file.name
+                file: base64File,
+
+                fileName: file.name
+
+            };
+
+            const input =
+                document.createElement("input");
+
+            input.type = "hidden";
+
+            input.name = "data";
+
+            input.value =
+                JSON.stringify(payload);
+
+            form.appendChild(input);
+
+            document.body.appendChild(form);
+
+            form.submit();
+
+            statusBox.innerHTML = `
+                <div style="
+                    background:#dcfce7;
+                    color:#166534;
+                    padding:1rem;
+                    border-radius:16px;
+                    font-weight:bold;
+                ">
+                    ✅ Upload completed successfully.
+                </div>
+            `;
 
         };
 
-        const input =
-            document.createElement("input");
+    });
 
-        input.type = "hidden";
-
-        input.name = "data";
-
-        input.value =
-            JSON.stringify(payload);
-
-        form.appendChild(input);
-
-        document.body.appendChild(form);
-
-        form.submit();
-
-        statusBox.innerHTML = `
-
-            <div style="
-                background:#dcfce7;
-                color:#166534;
-                padding:1rem;
-                border-radius:16px;
-                text-align:center;
-                font-weight:bold;
-            ">
-
-                ✅ Upload completed successfully.
-
-            </div>
-
-        `;
-
-    };
-
-});
+};
 
 </script>
 
@@ -98,3 +232,6 @@ document
     name="hiddenFrame"
     style="display:none;">
 </iframe>
+
+</body>
+</html>
