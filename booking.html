@@ -350,6 +350,28 @@ Promise.resolve()
         return;
     }
 
+    // SEND EMAIL TO ADMIN VIA EMAILJS
+emailjs.send(
+    "service_hf4l9dr", // YOUR SERVICE ID
+    "template_5qpg4pk", // YOUR TEMPLATE ID
+    {
+        full_name: this.fullName.value,
+        email: this.email.value,
+        mobile: this.mobile.value,
+        category: document.getElementById("serviceCategory").value,
+        service: document.getElementById("servicePackage").value,
+        preferred_date: this.preferredDate.value,
+        preferred_time: this.timeSlot.value,
+        reference_number: data.referenceNumber
+    }
+)
+.then(function(response) {
+    console.log("Admin email sent", response.status);
+})
+.catch(function(error) {
+    console.log("EmailJS Error:", error);
+});
+
     document.querySelector(".form-side").innerHTML = `
 
         <div style="text-align:center; padding:2rem;">
