@@ -342,6 +342,14 @@ Promise.resolve()
 
 .then(data => {
 
+    console.log(data);
+
+    if(!data.success){
+
+        alert(data.error || "Server Error");
+        return;
+    }
+
     document.querySelector(".form-side").innerHTML = `
 
         <div style="text-align:center; padding:2rem;">
