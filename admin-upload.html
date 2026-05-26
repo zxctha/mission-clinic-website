@@ -108,32 +108,121 @@
 
         </div>
 
-        <div class="group">
 
-            <label>
-                Upload PDF Result
-            </label>
+<!-- DITO ANG PATIENT INFO -->
+<div id="patientInfo" style="
+    display:none;
+    margin-bottom:1.5rem;
+    background:#f8fafc;
+    border:1px solid #cbd5e1;
+    padding:1rem;
+    border-radius:16px;
+">
 
-            <input
-                type="file"
-                id="resultFile"
-                accept=".pdf"
-                required>
+    <div style="margin-bottom:.5rem;">
+        <strong>Patient Name:</strong>
+        <span id="patientName"></span>
+    </div>
 
-        </div>
+    <div style="margin-bottom:.5rem;">
+        <strong>Service:</strong>
+        <span id="patientService"></span>
+    </div>
 
-        <button type="submit">
-            📄 Upload Result
-        </button>
-
-    </form>
-
-    <div id="uploadStatus"></div>
+    <div>
+        <strong>Status:</strong>
+        <span id="patientStatus"></span>
+    </div>
 
 </div>
 
-<script>
+<div class="group">
 
+    <label>
+        Upload PDF Result
+    </label>
+
+    <input
+        type="file"
+        id="resultFile"
+        accept=".pdf"
+        required>
+
+</div>
+
+<button type="submit">
+    📄 Upload Result
+</button>
+
+</form>
+
+<div id="uploadStatus"></div>
+
+<script>
+document
+.getElementById("referenceNumber")
+.addEventListener("change", async function () {
+
+    const reference =
+        this.value;
+
+    if(!reference) return;
+
+    try{
+
+        const response =
+            await fetch(
+                "https://script.google.com/macros/s/AKfycby37SS_0mdKvGBh1Kv79jbUrh0n0wRbRLh9wTjbDxsp1fzr4jkNH-Elc9zRpDRbVso/exec?reference="
+                + encodeURIComponent(reference)
+            );
+
+        const data =
+            await response.json();
+
+        if(data.found){
+
+            document
+            .getElementById("patientInfo")
+            .style.display = "block";
+
+            document
+            .getElementById("patientName")
+            .innerText = data.name;
+
+            document
+            .getElementById("patientService")
+            .innerText = data.service;
+
+            document
+            .getElementById("patientStatus")
+            .innerText = data.status;
+
+        }
+
+        else{
+
+            document
+            .getElementById("patientInfo")
+            .style.display = "none";
+
+            alert(
+                "Reference number not found."
+            );
+
+        }
+
+    }
+
+    catch(err){
+
+        console.log(err);
+
+    }
+
+});
+
+
+    
 document
 .getElementById("uploadForm")
 .addEventListener("submit", (e) => {
