@@ -136,7 +136,10 @@
 
 </div>
 
-<div class="group">
+<div
+    class="group"
+    id="uploadSection"
+    style="display:none;">
 
     <label>
         Upload PDF Result
@@ -186,6 +189,10 @@ document
             .style.display = "block";
 
             document
+            .getElementById("uploadSection")
+            .style.display = "block";
+
+            document
             .getElementById("patientName")
             .innerText = data.name;
 
@@ -203,6 +210,10 @@ document
 
             document
             .getElementById("patientInfo")
+            .style.display = "none";
+
+            document
+            .getElementById("uploadSection")
             .style.display = "none";
 
             alert(
