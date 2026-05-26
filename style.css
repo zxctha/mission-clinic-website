@@ -1690,13 +1690,19 @@ linear-gradient(
         flex-direction:column;
         overflow:hidden;
         border-radius:2rem;
+    
+        margin:0 1rem;
     }
 
-    .booking-info{
-        width:100%;
-        padding:2rem 1.5rem;
-        border-radius:0;
-    }
+        .booking-info{
+            width:100%;
+            padding:2rem;
+            border-radius:0;
+        
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
+        }
 
     .booking-info h2{
         font-size:2rem !important;
@@ -1751,6 +1757,23 @@ linear-gradient(
 
     .booking-hero p{
         font-size:0.95rem;
+    }
+
+}
+
+@media (max-width:768px){
+
+    .booking-info h2{
+        font-size:2.3rem !important;
+        line-height:1.1;
+    }
+
+    .booking-info{
+        min-height:auto;
+    }
+
+    .booking-box{
+        width:100%;
     }
 
 }
