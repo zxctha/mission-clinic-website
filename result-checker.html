@@ -10,194 +10,222 @@
 
     <title>Result Status Checker</title>
 
-    <link rel="stylesheet" href="style.css">
+    <style>
+
+        body{
+            margin:0;
+            font-family:Arial, sans-serif;
+            background:#f1f5f9;
+            min-height:100vh;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+        }
+
+        .card{
+            width:100%;
+            max-width:500px;
+            background:white;
+            padding:3rem;
+            border-radius:32px;
+            box-shadow:0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        h2{
+            color:#0057b8;
+            margin-bottom:1rem;
+        }
+
+        p{
+            color:#64748b;
+            margin-bottom:2rem;
+        }
+
+        label{
+            display:block;
+            margin-bottom:.5rem;
+            font-weight:bold;
+        }
+
+        input{
+            width:100%;
+            padding:14px;
+            border-radius:14px;
+            border:1px solid #cbd5e1;
+            box-sizing:border-box;
+        }
+
+        button{
+            width:100%;
+            padding:18px;
+            border:none;
+            border-radius:999px;
+            background:#f4d64e;
+            font-weight:bold;
+            cursor:pointer;
+            font-size:16px;
+            box-shadow:0 5px 15px rgba(0,0,0,0.15);
+            margin-top:1rem;
+        }
+
+        #resultBox{
+            margin-top:2rem;
+        }
+
+    </style>
 
 </head>
 
-<body class="bg-slate"
-      style="
-        min-height:100vh;
-        display:flex;
-        align-items:center;
-        justify-content:center;
-      ">
+<body>
 
-    <section class="section-padding">
+<div class="card">
 
-        <div style="
-            width:100%;
-            display:flex;
-            justify-content:center;
-            align-items:center;
-        ">
+    <h2>
+        Check Laboratory Result Status
+    </h2>
 
-                <div style="
-                    width:100%;
-                    max-width:500px;
-                    background:white;
-                    padding:3rem;
-                    border-radius:32px;
-                    box-shadow:0 10px 30px rgba(0,0,0,0.08);
+    <p>
+        Enter your reference number below.
+    </p>
+
+    <label>
+        Reference Number
+    </label>
+
+    <input
+        type="text"
+        id="referenceInput"
+        placeholder="ML-177918089858">
+
+    <button id="checkStatusBtn">
+        Check Status
+    </button>
+
+    <div id="resultBox"></div>
+
+</div>
+
+<script>
+
+function handleResult(data) {
+
+    const resultBox =
+        document.getElementById("resultBox");
+
+    if (data.found) {
+
+        resultBox.innerHTML = `
+
+            <div style="
+                background:#f8fafc;
+                border-radius:24px;
+                padding:2rem;
+                border:1px solid #cbd5e1;
+            ">
+            
+                <h3 style="
+                    color:#2563eb;
+                    margin-bottom:1rem;
+                    font-size:1.5rem;
                 ">
+                    ${data.name}
+                </h3>
+            
+                <p style="margin-bottom:0.5rem;">
+                    <strong>Service:</strong>
+                    ${data.service}
+                </p>
+            
+                <p style="
+                    margin-top:1rem;
+                    font-weight:bold;
+                    color:#16a34a;
+                ">
+                    ✅ Status: ${data.status}
+                </p>
 
-                <div style="
-                        width:100%;
-                    ">
-
-                    <h2 style="
-                        color:var(--clinic-blue);
-                        margin-bottom:1rem;
-                    ">
-                        Check Laboratory Result Status
-                    </h2>
-
-                    <p style="
-                        color:var(--slate-500);
-                        margin-bottom:2rem;
-                    ">
-                        Enter your reference number below.
-                    </p>
-
-                    <div class="form-group">
-
-                        <label>Reference Number</label>
-
-                        <input type="text"
-                               id="referenceInput"
-                               class="form-control"
-                               placeholder="ML-177918089858">
-
-                    </div>
-
-                    <button id="checkStatusBtn"
-                            class="btn btn-primary appointment-btn"
-                            style="width:100%;">
-
-                        Check Status
-
-                    </button>
-
-                    <div id="resultBox"
-                         style="margin-top:2rem;">
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <script>
-
-    document.getElementById("checkStatusBtn")
-    .addEventListener("click", () => {
-
-        const reference =
-    document.getElementById("referenceInput").value;
-
-const resultBox =
-    document.getElementById("resultBox");
-
-resultBox.innerHTML = `
-    <div style="
-        text-align:center;
-        color:#64748b;
-        margin-top:1rem;
-    ">
-        Checking status...
-    </div>
-`;
-
-fetch("https://script.google.com/macros/s/AKfycby37SS_0mdKvGBh1Kv79jbUrh0n0wRbRLh9wTjbDxsp1fzr4jkNH-Elc9zRpDRbVso/exec?reference=" + reference)
-    
-        .then(response => response.json())
-
-        .then(data => {
-
-            const resultBox =
-                document.getElementById("resultBox");
-
-            if (data.found) {
-
-                resultBox.innerHTML = `
-
-                    <div style="
-                        background:#f8fafc;
-                        border-radius:24px;
-                        padding:2rem;
-                        border:1px solid #cbd5e1;
-                    ">
-                    
-                        <h3 style="
-                            color:#2563eb;
-                            margin-bottom:1rem;
-                            font-size:1.5rem;
-                        ">
-                            ${data.name}
-                        </h3>
-                    
-                        <p style="margin-bottom:0.5rem;">
-                            <strong>Service:</strong>
-                            ${data.service}
-                        </p>
-                    
-                        <p style="
-                            margin-top:1rem;
-                            font-weight:bold;
-                            color:#16a34a;
-                        ">
-                          ✅ Status: ${data.status}
-                        </p>
-                        
-                        ${data.status === "Released" && data.resultLink ? `
-                        <a href="${data.resultLink}"
-                           target="_blank"
-                           style="
-                              display:block;
-                              margin-top:1.5rem;
-                              background:#2563eb;
-                              color:white;
-                              padding:1rem;
-                              border-radius:16px;
-                              text-align:center;
-                              text-decoration:none;
-                              font-weight:bold;
-                           ">
-                           📄 Download Laboratory Result
-                        </a>
-                        ` : ""}
-                        
-                        </div>
-                        
-                        `;
-            } else {
-
-                resultBox.innerHTML = `
-
-                    <div style="
-                        background:#fef2f2;
-                        color:#dc2626;
+                ${data.status === "COMPLETED" && data.resultLink ? `
+                
+                <a href="${data.resultLink}"
+                   target="_blank"
+                   style="
+                        display:block;
+                        margin-top:1.5rem;
+                        background:#2563eb;
+                        color:white;
                         padding:1rem;
                         border-radius:16px;
-                    ">
+                        text-align:center;
+                        text-decoration:none;
+                        font-weight:bold;
+                   ">
+                    📄 Download Laboratory Result
+                </a>
 
-                        ❌ Reference number not found.
+                ` : ""}
+                
+            </div>
 
-                    </div>
+        `;
 
-                `;
+    }
 
-            }
+    else {
 
-        });
+        resultBox.innerHTML = `
 
-    });
+            <div style="
+                background:#fef2f2;
+                color:#dc2626;
+                padding:1rem;
+                border-radius:16px;
+            ">
+                ❌ Reference number not found.
+            </div>
 
-    </script>
+        `;
 
-    
+    }
+
+}
+
+
+
+document
+.getElementById("checkStatusBtn")
+.addEventListener("click", () => {
+
+    const reference =
+        document.getElementById("referenceInput").value;
+
+    const resultBox =
+        document.getElementById("resultBox");
+
+    resultBox.innerHTML = `
+
+        <div style="
+            text-align:center;
+            color:#64748b;
+            margin-top:1rem;
+        ">
+            Checking status...
+        </div>
+
+    `;
+
+    const script =
+        document.createElement("script");
+
+    script.src =
+        "https://script.google.com/macros/s/AKfycby37SS_0mdKvGBh1Kv79jbUrh0n0wRbRLh9wTjbDxsp1fzr4jkNH-Elc9zRpDRbVso/exec?reference="
+        + reference +
+        "&callback=handleResult";
+
+    document.body.appendChild(script);
+
+});
+
+</script>
+
 </body>
-
 </html>
