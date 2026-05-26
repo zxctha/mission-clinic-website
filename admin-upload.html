@@ -244,14 +244,18 @@ document
     const reference =
         document.getElementById("referenceNumber").value;
 
-    const file =
-        document.getElementById("resultFile").files[0];
+    const files =
+        document.getElementById("resultFile").files;
 
     const statusBox =
         document.getElementById("uploadStatus");
 
     statusBox.innerHTML =
         "Uploading result...";
+
+for(let i = 0; i < files.length; i++){
+
+    const file = files[i];
 
     const reader =
         new FileReader();
@@ -300,20 +304,21 @@ document
 
         form.submit();
 
-        statusBox.innerHTML = `
-            <div style="
-                background:#dcfce7;
-                color:#166534;
-                padding:1rem;
-                border-radius:16px;
-                font-weight:bold;
-            ">
-                ✅ Upload completed successfully.
-            </div>
-        `;
-
     };
 
+}
+
+statusBox.innerHTML = `
+    <div style="
+        background:#dcfce7;
+        color:#166534;
+        padding:1rem;
+        border-radius:16px;
+        font-weight:bold;
+    ">
+        ✅ Upload completed successfully.
+    </div>
+`;
 });
 
 </script>
