@@ -193,7 +193,7 @@ function handleResult(data) {
 
 document
 .getElementById("checkStatusBtn")
-.addEventListener("click", () => {
+.addEventListener("click", async () => {
 
     const reference =
         document.getElementById("referenceInput").value;
@@ -213,19 +213,42 @@ document
 
     `;
 
-    const script =
-        document.createElement("script");
+    try {
 
-    script.src =
-        "https://script.google.com/macros/s/AKfycby37SS_0mdKvGBh1Kv79jbUrh0n0wRbRLh9wTjbDxsp1fzr4jkNH-Elc9zRpDRbVso/exec?reference="
-        + reference +
-        "&callback=handleResult";
+        const response =
+            await fetch(
+                "https://script.google.com/macros/s/AKfycby37SS_0mdKvGBh1Kv79jbUrh0n0wRbRLh9wTjbDxsp1fzr4jkNH-Elc9zRpDRbVso/exec?reference="
+                + reference
+            );
 
-    document.body.appendChild(script);
+        const data =
+            await response.json();
+
+        handleResult(data);
+
+    }
+
+    catch(err){
+
+        console.log(err);
+
+        resultBox.innerHTML = `
+
+            <div style="
+                background:#fef2f2;
+                color:#dc2626;
+                padding:1rem;
+                border-radius:16px;
+            ">
+                ❌ Failed to check status.
+            </div>
+
+        `;
+
+    }
 
 });
 
 </script>
-
 </body>
 </html>
