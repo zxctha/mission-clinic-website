@@ -237,7 +237,7 @@ document
     
 document
 .getElementById("uploadForm")
-.addEventListener("submit", (e) => {
+.addEventListener("submit", async (e) => {
 
     e.preventDefault();
 
@@ -262,68 +262,75 @@ uploadButton.disabled = true;
 uploadButton.innerText = "Uploading...";
 
 let uploadedCount = 0;
+
 for(let i = 0; i < files.length; i++){
 
     const file = files[i];
 
-    const reader =
-        new FileReader();
+    const base64File = await new Promise((resolve) => {
 
-    reader.readAsDataURL(file);
+        const reader = new FileReader();
 
-    reader.onload = async () => {
+        reader.readAsDataURL(file);
 
-        const base64File =
-            reader.result.split(",")[1];
+        reader.onload = () => {
 
-        const payload = {
-
-            action: "uploadResult",
-
-            reference: reference,
-
-            file: base64File,
-
-            fileName: file.name
+            resolve(
+                reader.result.split(",")[1]
+            );
 
         };
 
-        await fetch(
-            "https://script.google.com/macros/s/AKfycby37SS_0mdKvGBh1Kv79jbUrh0n0wRbRLh9wTjbDxsp1fzr4jkNH-Elc9zRpDRbVso/exec",
-            {
-                method: "POST",
-                body: new URLSearchParams({
-                    payload: JSON.stringify(payload)
-                })
-            }
-        );
+    });
 
-            uploadedCount++;
+    const payload = {
 
-if(uploadedCount === files.length){
+        action: "uploadResult",
+
+        reference: reference,
+
+        file: base64File,
+
+        fileName: file.name
+
+    };
+
+    await fetch(
+        "https://script.google.com/macros/s/AKfycby37SS_0mdKvGBh1Kv79jbUrh0n0wRbRLh9wTjbDxsp1fzr4jkNH-Elc9zRpDRbVso/exec",
+        {
+            method: "POST",
+            body: new URLSearchParams({
+                payload: JSON.stringify(payload)
+            })
+        }
+    );
+
+    uploadedCount++;
+
+    statusBox.innerHTML = `
+        Uploading ${uploadedCount} of ${files.length} files...
+    `;
+
+}
 
 uploadButton.disabled = false;
 
 uploadButton.innerText = "📄 Upload Result";
 
-    statusBox.innerHTML = `
-        <div style="
-            background:#dcfce7;
-            color:#166534;
-            padding:1rem;
-            border-radius:16px;
-            font-weight:bold;
-        ">
-            ✅ All files uploaded successfully.
-        </div>
-    `;
-
-}
-};
-
-}
+statusBox.innerHTML = `
+    <div style="
+        background:#dcfce7;
+        color:#166534;
+        padding:1rem;
+        border-radius:16px;
+        font-weight:bold;
+    ">
+        ✅ All files uploaded successfully.
+    </div>
+`;
 
 });
+        
 
 </script>
 
