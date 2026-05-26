@@ -338,7 +338,7 @@ Promise.resolve()
 
 })
 
-.then(response => response.json())
+.then(response => response.text())
 
 .then(data => {
 
@@ -361,7 +361,7 @@ Promise.resolve()
             ">
 
                 <p style="margin-bottom:0.5rem;">
-                    Reference Number
+                    Booking Successful
                 </p>
 
                 <h1 style="
@@ -369,15 +369,10 @@ Promise.resolve()
                     font-size:1.5rem;
                     margin:0;
                 ">
-                    ${data.referenceNumber}
+                    ✔ Saved Successfully
                 </h1>
 
             </div>
-
-            <p style="font-size:0.9rem; color:#64748b;">
-                Please save this reference number
-                for result tracking.
-            </p>
 
             <a href="index.html"
                class="btn btn-primary"
@@ -390,7 +385,6 @@ Promise.resolve()
         </div>
 
     `;
-
 })
         
         .catch((error) => {
