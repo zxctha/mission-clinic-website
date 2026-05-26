@@ -162,42 +162,34 @@ document
         const base64File =
             reader.result.split(",")[1];
 
-        const form =
-            document.createElement("form");
 
-        form.method = "POST";
 
-        form.action =
-            "https://script.google.com/macros/s/AKfycby37SS_0mdKvGBh1Kv79jbUrh0n0wRbRLh9wTjbDxsp1fzr4jkNH-Elc9zRpDRbVso/exec";
+        fetch(
+    "https://script.google.com/macros/s/AKfycby37SS_0mdKvGBh1Kv79jbUrh0n0wRbRLh9wTjbDxsp1fzr4jkNH-Elc9zRpDRbVso/exec",
+    {
+        method: "POST",
 
-        form.target =
-            "hiddenFrame";
+        body: JSON.stringify({
 
-        const input =
-            document.createElement("input");
+            action: "uploadResult",
 
-        input.type = "hidden";
+            reference: reference,
 
-        input.name = "data";
+            file: base64File,
 
-        input.value =
-            JSON.stringify({
+            fileName: file.name
 
-                action: "uploadResult",
+        })
 
-                reference: reference,
+    }
+)
+.then(response => response.json())
 
-                file: base64File,
+.then(data => {
 
-                fileName: file.name
+    console.log(data);
 
-            });
-
-        form.appendChild(input);
-
-        document.body.appendChild(form);
-
-        form.submit();
+    if(data.success){
 
         statusBox.innerHTML = `
             <div style="
@@ -211,16 +203,51 @@ document
             </div>
         `;
 
+    } else {
+
+        statusBox.innerHTML = `
+            <div style="
+                background:#fee2e2;
+                color:#991b1b;
+                padding:1rem;
+                border-radius:16px;
+                font-weight:bold;
+            ">
+                ❌ ${data.error}
+            </div>
+        `;
+
+    }
+
+})
+.catch(err => {
+
+    console.log(err);
+
+    statusBox.innerHTML = `
+        <div style="
+            background:#fee2e2;
+            color:#991b1b;
+            padding:1rem;
+            border-radius:16px;
+            font-weight:bold;
+        ">
+            ❌ Upload failed.
+        </div>
+    `;
+
+});
+
+
+
+
+
     };
 
 });
 
 </script>
 
-<iframe
-    name="hiddenFrame"
-    style="display:none;">
-</iframe>
 
 </body>
 </html>
