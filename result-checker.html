@@ -144,13 +144,32 @@ function handleResult(data) {
                     ✅ Status: ${data.status}
                 </p>
 
-                ${data.status === "COMPLETED" && data.resultLink ? `
-                
-                <a href="${data.resultLink}"
+${data.status === "COMPLETED" && data.resultLink ? `
+
+<div style="margin-top:1.5rem;">
+
+    <strong style="
+        display:block;
+        margin-bottom:1rem;
+    ">
+        Laboratory Results
+    </strong>
+
+    ${data.resultLink
+        .split("\n\n")
+        .map(entry => {
+
+            const lines = entry.split("\n");
+
+            const fileName = lines[0];
+            const fileUrl = lines[1];
+
+            return `
+                <a href="${fileUrl}"
                    target="_blank"
                    style="
                         display:block;
-                        margin-top:1.5rem;
+                        margin-bottom:1rem;
                         background:#2563eb;
                         color:white;
                         padding:1rem;
@@ -159,10 +178,16 @@ function handleResult(data) {
                         text-decoration:none;
                         font-weight:bold;
                    ">
-                    📄 Download Laboratory Result
+                    📄 ${fileName}
                 </a>
+            `;
 
-                ` : ""}
+        }).join("")
+    }
+
+</div>
+
+` : ""}
                 
             </div>
 
