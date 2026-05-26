@@ -247,12 +247,21 @@ document
     const files =
         document.getElementById("resultFile").files;
 
-    const statusBox =
-        document.getElementById("uploadStatus");
 
-    statusBox.innerHTML =
-        "Uploading result...";
+const statusBox =
+    document.getElementById("uploadStatus");
 
+statusBox.innerHTML =
+    "Uploading result...";
+
+const uploadButton =
+    document.querySelector("button");
+
+uploadButton.disabled = true;
+
+uploadButton.innerText = "Uploading...";
+
+let uploadedCount = 0;
 for(let i = 0; i < files.length; i++){
 
     const file = files[i];
@@ -262,72 +271,61 @@ for(let i = 0; i < files.length; i++){
 
     reader.readAsDataURL(file);
 
-    reader.onload = () => {
+    reader.onload = async () => {
 
         const base64File =
             reader.result.split(",")[1];
 
-        const form =
-            document.createElement("form");
+        const payload = {
 
-        form.method = "POST";
+            action: "uploadResult",
 
-        form.action =
-            "https://script.google.com/macros/s/AKfycby37SS_0mdKvGBh1Kv79jbUrh0n0wRbRLh9wTjbDxsp1fzr4jkNH-Elc9zRpDRbVso/exec";
+            reference: reference,
 
-        form.target =
-            "hiddenFrame";
+            file: base64File,
 
-        const input =
-            document.createElement("input");
+            fileName: file.name
 
-        input.type = "hidden";
+        };
 
-        input.name = "payload";
+        await fetch(
+            "https://script.google.com/macros/s/AKfycby37SS_0mdKvGBh1Kv79jbUrh0n0wRbRLh9wTjbDxsp1fzr4jkNH-Elc9zRpDRbVso/exec",
+            {
+                method: "POST",
+                body: new URLSearchParams({
+                    payload: JSON.stringify(payload)
+                })
+            }
+        );
 
-        input.value =
-            JSON.stringify({
+            uploadedCount++;
 
-                action: "uploadResult",
+if(uploadedCount === files.length){
 
-                reference: reference,
+uploadButton.disabled = false;
 
-                file: base64File,
+uploadButton.innerText = "📄 Upload Result";
 
-                fileName: file.name
+    statusBox.innerHTML = `
+        <div style="
+            background:#dcfce7;
+            color:#166534;
+            padding:1rem;
+            border-radius:16px;
+            font-weight:bold;
+        ">
+            ✅ All files uploaded successfully.
+        </div>
+    `;
 
-            });
-
-        form.appendChild(input);
-
-        document.body.appendChild(form);
-
-        form.submit();
-
-    };
+}
+};
 
 }
 
-statusBox.innerHTML = `
-    <div style="
-        background:#dcfce7;
-        color:#166534;
-        padding:1rem;
-        border-radius:16px;
-        font-weight:bold;
-    ">
-        ✅ Upload completed successfully.
-    </div>
-`;
 });
 
 </script>
-
-<iframe
-    name="hiddenFrame"
-    style="display:none;">
-</iframe>
-
 
     
 </body>
