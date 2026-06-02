@@ -152,6 +152,12 @@
         multiple
         required>
 
+    <div id="fileList" style="
+        margin-top:10px;
+        font-size:14px;
+        color:#475569;
+    "></div>
+
 </div>
 
 <button type="submit">
@@ -163,6 +169,7 @@
 <div id="uploadStatus"></div>
 
 <script>
+    
 document
 .getElementById("referenceNumber")
 .addEventListener("change", async function () {
@@ -234,6 +241,63 @@ document
 });
 
 
+    
+document
+.getElementById("resultFile")
+.addEventListener("change", function(){
+
+    const files = this.files;
+
+    const fileList =
+        document.getElementById("fileList");
+
+    if(files.length === 0){
+
+        fileList.innerHTML = "";
+
+        return;
+
+    }
+
+    let html = `
+        <div style="
+            background:#f8fafc;
+            border:1px solid #cbd5e1;
+            border-radius:12px;
+            padding:12px;
+            margin-top:10px;
+        ">
+            <strong>
+                📄 Selected Files (${files.length})
+            </strong>
+
+            <ul style="
+                margin:10px 0 0;
+                padding-left:20px;
+            ">
+    `;
+
+    for(let i = 0; i < files.length; i++){
+
+        html += `
+            <li style="margin-bottom:4px;">
+                ${files[i].name}
+            </li>
+        `;
+
+    }
+
+    html += `
+            </ul>
+        </div>
+    `;
+
+    fileList.innerHTML = html;
+
+});
+
+
+    
     
 document
 .getElementById("uploadForm")
@@ -329,6 +393,11 @@ statusBox.innerHTML = `
     </div>
 `;
 
+document.getElementById("resultFile").value = "";
+
+document.getElementById("fileList").innerHTML = "";
+
+    
 });
         
 
