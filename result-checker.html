@@ -321,13 +321,13 @@ window.addEventListener("load", async () => {
             await response.json();
 
         if(data.found){
-
+            console.log(data);
             handleResult({
                 found:true,
                 name:data.name,
-                service:"",
+                service:"Laboratory Result",
                 status:"COMPLETED",
-                resultLink:data.resultFiles
+                resultLink:data.resultLink
             });
 
         }
