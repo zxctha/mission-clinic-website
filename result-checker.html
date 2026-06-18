@@ -274,6 +274,91 @@ document
 
 });
 
+// AUTO QR TOKEN CHECK
+
+window.addEventListener("load", async () => {
+
+    const token =
+        new URLSearchParams(
+            window.location.search
+        ).get("token");
+
+    if(!token) return;
+
+    document
+        .getElementById("referenceInput")
+        .style.display = "none";
+
+    document
+        .getElementById("checkStatusBtn")
+        .style.display = "none";
+
+    document
+        .querySelector("label")
+        .style.display = "none";
+
+    const resultBox =
+        document.getElementById("resultBox");
+
+    resultBox.innerHTML = `
+        <div style="
+            text-align:center;
+            color:#64748b;
+        ">
+            Loading laboratory result...
+        </div>
+    `;
+
+    try{
+
+        const response =
+            await fetch(
+                "https://script.google.com/macros/s/AKfycby37SS_0mdKvGBh1Kv79jbUrh0n0wRbRLh9wTjbDxsp1fzr4jkNH-Elc9zRpDRbVso/exec?token="
+                + token
+            );
+
+        const data =
+            await response.json();
+
+        if(data.found){
+
+            handleResult({
+                found:true,
+                name:data.name,
+                service:"",
+                status:"COMPLETED",
+                resultLink:data.resultFiles
+            });
+
+        }
+
+        else{
+
+            resultBox.innerHTML = `
+                <div style="
+                    background:#fef2f2;
+                    color:#dc2626;
+                    padding:1rem;
+                    border-radius:16px;
+                ">
+                    ❌ Invalid QR Code
+                </div>
+            `;
+
+        }
+
+    }
+
+    catch(err){
+
+        console.log(err);
+
+    }
+
+});    
+
+    
+
 </script>
 </body>
 </html>
