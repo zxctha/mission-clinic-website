@@ -188,6 +188,39 @@ ${data.status === "COMPLETED" && data.resultLink ? `
 </div>
 
 ` : ""}
+
+
+${data.qrUrl ? `
+
+<div style="
+    margin-top:2rem;
+    text-align:center;
+">
+
+    <strong style="
+        display:block;
+        margin-bottom:1rem;
+    ">
+        Save this QR Code for future access
+    </strong>
+
+    <img
+        src="${data.qrUrl}"
+        alt="Patient QR Code"
+        style="
+            width:220px;
+            max-width:100%;
+            background:white;
+            padding:10px;
+            border-radius:16px;
+            border:1px solid #cbd5e1;
+        ">
+
+</div>
+
+` : ""}
+
+
                 
             </div>
 
@@ -327,7 +360,8 @@ window.addEventListener("load", async () => {
                 name:data.name,
                 service:"Laboratory Result",
                 status:"COMPLETED",
-                resultLink:data.resultLink
+                resultLink:data.resultLink,
+                qrUrl:data.qrUrl
             });
 
         }
